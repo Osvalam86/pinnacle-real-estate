@@ -47,4 +47,11 @@ Comandos: `pnpm dev`, `pnpm build`, `pnpm lint`, `pnpm preview`.
 - Marcado, estilos y accesibilidad los decide y revisa Osvaldo. Datos, rutas y build siguen patrones simples y se explican en lenguaje llano.
 - Al terminar, informa de qué hiciste y qué no, con la salida literal de los comandos, y separa lo comprobado de lo supuesto.
 - No afirmes conformidad con WCAG: di qué se comprobó y cómo.
-- Respuestas en español. Código, nombres de archivo y clases en inglés. Los textos del sitio van en inglés, tal como están en el diseño y en `projects.json`.
+
+## Idioma
+
+- Identificadores en inglés: archivos, componentes, hooks, variables, props, `id`, clases y atributos.
+- Texto visible del sitio en inglés: es el del diseño y el de `projects.json`.
+- Comentarios del código en español. Pocos, y solo para explicar un porqué.
+- Documentación (`README.md`, `DESIGN.md`, `CLAUDE.md`) y mensajes de commit en español.
+- Informes y respuestas a Osvaldo en español, siempre.
