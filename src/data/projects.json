@@ -1,0 +1,512 @@
+[
+  {
+    "slug": "the-grand-estate",
+    "name": "The Grand Estate",
+    "type": "Residential",
+    "location": "Upper Macungie Township, PA",
+    "costRange": "5m-20m",
+    "tag": "Movie theater",
+    "image": "/images/projects/the-grand-estate.webp",
+    "description": "The Grand Estate is a luxurious residential development featuring 12 bespoke homes, each with its own unique design and amenities",
+    "summary": "The Grand Estate is a stunning residential development featuring 12 custom-built homes, each with its own unique design and high-end amenities. Nestled in a picturesque setting, this community offers residents a truly luxurious living experience.",
+    "address": "123 Luxury Lane",
+    "article": [
+      {
+        "id": "planning",
+        "title": "Planning and Development",
+        "paragraphs": [
+          "The planning and development of the Grand Estate began several years ago, with a team of experts working tirelessly to bring this vision to life. From the initial concept to the final construction, every detail was carefully considered to ensure that the Grand Estate would be a truly exceptional community."
+        ]
+      },
+      {
+        "id": "design",
+        "title": "Design and Architecture",
+        "paragraphs": [
+          "The Grand Estate's design and architecture were inspired by the finest luxury estates around the world. Each home was designed to be a masterpiece of modern design, with clean lines, sleek surfaces, and an emphasis on natural light and ventilation."
+        ]
+      },
+      {
+        "id": "amenities",
+        "title": "Amenities",
+        "paragraphs": [
+          "The Grand Estate offers a range of luxurious amenities, including:"
+        ],
+        "list": [
+          {
+            "name": "Private movie theater",
+            "text": "A state-of-the-art movie theater with plush seating and a large screen."
+          },
+          {
+            "name": "Indoor swimming pool",
+            "text": "A sparkling indoor pool with a retractable roof, perfect for year-round swimming."
+          },
+          {
+            "name": "Fitness center",
+            "text": "A fully equipped fitness center with the latest exercise equipment and personal training services."
+          },
+          {
+            "name": "Private parking",
+            "text": "Secure, underground parking for each home, with direct access to the elevator."
+          },
+          {
+            "name": "Gated community",
+            "text": "A secure, gated community with 24/7 security and access control."
+          }
+        ]
+      },
+      {
+        "id": "community",
+        "title": "Community",
+        "paragraphs": [
+          "The Grand Estate is more than just a collection of homes - it's a community. Residents can enjoy a range of community amenities, including:"
+        ],
+        "list": [
+          {
+            "name": "Community center",
+            "text": "A state-of-the-art community center with a fully equipped kitchen, perfect for hosting events and gatherings."
+          },
+          {
+            "name": "Parks and green spaces",
+            "text": "Lush parks and green spaces throughout the community, providing a peaceful retreat from the hustle and bustle of city life."
+          },
+          {
+            "name": "Walking trails",
+            "text": "Walking trails that wind through the community, providing a scenic and peaceful way to enjoy the outdoors."
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "Conclusion",
+        "paragraphs": [
+          "The Grand Estate is a truly exceptional community, offering residents a luxurious living experience like no other. With its stunning design, luxurious amenities, and private outdoor spaces, this community is the perfect choice for those who demand the very best."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "the-business-hub",
+    "name": "The Business Hub",
+    "type": "Commercial",
+    "location": "Allentown, PA",
+    "costRange": "over-20m",
+    "tag": "High-speed Wi-Fi",
+    "image": "/images/projects/the-business-hub.webp",
+    "description": "The Business Hub is a state-of-the-art commercial office space designed to meet the needs of modern businesses.",
+    "summary": "The Business Hub is a state-of-the-art commercial office development designed around the way modern companies work. Flexible floors, shared services, and a central location give growing teams a workplace that adapts as they do.",
+    "address": "450 Commerce Drive",
+    "article": [
+      {
+        "id": "planning",
+        "title": "Planning and Development",
+        "paragraphs": [
+          "The Business Hub was planned in response to growing demand for flexible, well-connected office space in the region. Our team worked closely with local businesses and city planners from the first feasibility study to the final handover, making sure the building would serve its tenants for decades to come."
+        ]
+      },
+      {
+        "id": "design",
+        "title": "Design and Architecture",
+        "paragraphs": [
+          "The architecture of the Business Hub pairs a glass and steel facade with open, column-free floors that can be divided or combined as a company grows. Generous ceiling heights, natural light on every level, and efficient building systems keep the space comfortable and running costs low."
+        ]
+      },
+      {
+        "id": "amenities",
+        "title": "Amenities",
+        "paragraphs": [
+          "The Business Hub offers a range of amenities designed for the working day, including:"
+        ],
+        "list": [
+          {
+            "name": "High-speed Wi-Fi",
+            "text": "Fast, reliable fiber connectivity throughout the building, including all shared areas."
+          },
+          {
+            "name": "Conference center",
+            "text": "Fully equipped meeting rooms and a 120-seat auditorium available to every tenant."
+          },
+          {
+            "name": "Rooftop terrace",
+            "text": "A landscaped terrace with seating, ideal for informal meetings and company events."
+          },
+          {
+            "name": "On-site café",
+            "text": "A ground-floor café serving fresh coffee, breakfast, and lunch throughout the week."
+          },
+          {
+            "name": "Underground parking",
+            "text": "Secure parking with electric vehicle charging and direct elevator access."
+          }
+        ]
+      },
+      {
+        "id": "community",
+        "title": "Community",
+        "paragraphs": [
+          "The Business Hub is more than an office building. It is a place where companies connect. Tenants share a range of common spaces, including:"
+        ],
+        "list": [
+          {
+            "name": "Shared lounge",
+            "text": "A comfortable lounge on the ground floor where teams from different companies can meet and collaborate."
+          },
+          {
+            "name": "Event space",
+            "text": "A flexible hall for product launches, workshops, and networking events, open to all tenants."
+          },
+          {
+            "name": "Outdoor plaza",
+            "text": "A public plaza with trees and seating that links the building to the surrounding streets."
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "Conclusion",
+        "paragraphs": [
+          "The Business Hub sets a new standard for commercial space in the area. With its flexible design, practical amenities, and strong sense of community, it is the right choice for businesses that want room to grow."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "the-village",
+    "name": "The Village",
+    "type": "Mixed-use",
+    "location": "Upper Macungie Township, PA",
+    "costRange": "over-20m",
+    "tag": "Green spaces",
+    "image": "/images/projects/the-village.webp",
+    "description": "The Village is a community development featuring a mix of residential and commercial spaces, designed to create a vibrant and sustainable community.",
+    "summary": "The Village is a mixed-use community development that brings homes, shops, and workplaces together around a walkable center. Designed with sustainability in mind, it gives residents everything they need within a short stroll.",
+    "address": "8 Orchard Way",
+    "article": [
+      {
+        "id": "planning",
+        "title": "Planning and Development",
+        "paragraphs": [
+          "Planning for the Village started with a simple question: what makes a neighborhood a good place to live? After extensive consultation with local residents and businesses, our team developed a master plan that balances housing, commerce, and open space across every phase of construction."
+        ]
+      },
+      {
+        "id": "design",
+        "title": "Design and Architecture",
+        "paragraphs": [
+          "The Village combines townhomes, apartments, and street-level storefronts in a style that reflects the character of the region. Buildings are kept at a human scale, with brick and timber facades, shaded sidewalks, and energy-efficient systems throughout."
+        ]
+      },
+      {
+        "id": "amenities",
+        "title": "Amenities",
+        "paragraphs": [
+          "The Village offers a range of amenities for everyday life, including:"
+        ],
+        "list": [
+          {
+            "name": "Green spaces",
+            "text": "Landscaped parks and gardens within a five-minute walk of every home."
+          },
+          {
+            "name": "Community plaza",
+            "text": "A central square with seating, a fountain, and space for weekend markets."
+          },
+          {
+            "name": "Local shops",
+            "text": "Street-level stores, cafés, and services run by independent local businesses."
+          },
+          {
+            "name": "Bike paths",
+            "text": "Dedicated cycling routes that connect homes, shops, and nearby neighborhoods."
+          },
+          {
+            "name": "Playground",
+            "text": "A safe, modern play area designed for children of all ages."
+          }
+        ]
+      },
+      {
+        "id": "community",
+        "title": "Community",
+        "paragraphs": [
+          "The Village is more than a place to live. It is a place to belong. Residents can enjoy a range of shared spaces, including:"
+        ],
+        "list": [
+          {
+            "name": "Community garden",
+            "text": "Shared garden plots where neighbors can grow their own vegetables, herbs, and flowers."
+          },
+          {
+            "name": "Farmers market",
+            "text": "A weekly market in the plaza featuring fresh produce and goods from local growers and makers."
+          },
+          {
+            "name": "Neighborhood hall",
+            "text": "A multipurpose hall available for classes, celebrations, and community meetings."
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "Conclusion",
+        "paragraphs": [
+          "The Village shows what a sustainable, connected neighborhood can look like. With its mix of homes, businesses, and green spaces, it offers a way of life that is convenient, welcoming, and built to last."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "the-skyline",
+    "name": "The Skyline",
+    "type": "Residential",
+    "location": "Allentown, PA",
+    "costRange": "5m-20m",
+    "tag": "Movie theater",
+    "image": "/images/projects/the-skyline.webp",
+    "description": "The Skyline is a stunning condominium development featuring 20 high-end units with breathtaking views of the city skyline.",
+    "summary": "The Skyline is a condominium development of 20 high-end residences set above the city. Floor-to-ceiling windows, private terraces, and carefully selected finishes make every home a front-row seat to the skyline.",
+    "address": "200 Summit Avenue",
+    "article": [
+      {
+        "id": "planning",
+        "title": "Planning and Development",
+        "paragraphs": [
+          "The Skyline was conceived as a small collection of residences on one of the best-positioned sites in the city. From site selection to completion, our team focused on a single goal: giving every one of the 20 units an open, uninterrupted view."
+        ]
+      },
+      {
+        "id": "design",
+        "title": "Design and Architecture",
+        "paragraphs": [
+          "The tower's slender form and glass facade were designed to capture light from sunrise to sunset. Inside, open floor plans, natural stone, and warm wood finishes create homes that feel calm and refined, while private terraces extend the living space outdoors."
+        ]
+      },
+      {
+        "id": "amenities",
+        "title": "Amenities",
+        "paragraphs": [
+          "The Skyline offers a range of luxurious amenities, including:"
+        ],
+        "list": [
+          {
+            "name": "Private movie theater",
+            "text": "A screening room for residents, with plush seating and a large screen."
+          },
+          {
+            "name": "Rooftop lounge",
+            "text": "An open-air lounge with a fire pit, seating, and panoramic views of the city."
+          },
+          {
+            "name": "Fitness center",
+            "text": "A fully equipped gym with the latest equipment and a dedicated yoga studio."
+          },
+          {
+            "name": "Concierge service",
+            "text": "A front desk team available around the clock to assist residents and guests."
+          },
+          {
+            "name": "Secure parking",
+            "text": "Underground parking for every residence, with direct elevator access."
+          }
+        ]
+      },
+      {
+        "id": "community",
+        "title": "Community",
+        "paragraphs": [
+          "The Skyline is more than a building. It is a small community of neighbors. Residents can enjoy a range of shared spaces, including:"
+        ],
+        "list": [
+          {
+            "name": "Residents' lounge",
+            "text": "A comfortable lounge with a library and fireplace, ideal for relaxing or meeting neighbors."
+          },
+          {
+            "name": "Sky garden",
+            "text": "A landscaped garden on the upper floors that offers a quiet retreat above the city."
+          },
+          {
+            "name": "Private dining room",
+            "text": "A dining room with a full kitchen that residents can reserve for dinners and celebrations."
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "Conclusion",
+        "paragraphs": [
+          "The Skyline offers a rare combination of privacy, comfort, and views. With its elegant design and thoughtful amenities, it is the perfect choice for those who want to live at the center of the city and above it all."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "the-old-mill",
+    "name": "The Old Mill",
+    "type": "Mixed-use",
+    "location": "Bethlehem, PA",
+    "costRange": "under-5m",
+    "tag": "High-speed Wi-Fi",
+    "image": "/images/projects/the-old-mill.webp",
+    "description": "A historic renovation project that has transformed a former industrial site into a vibrant, mixed-use development.",
+    "summary": "The Old Mill is a historic renovation that has turned a former industrial site into a lively mixed-use development. Original brick and timber now frame loft homes, studios, and shops in a place with a story to tell.",
+    "address": "17 Mill Race Road",
+    "article": [
+      {
+        "id": "planning",
+        "title": "Planning and Development",
+        "paragraphs": [
+          "The Old Mill stood empty for many years before our team began working with preservation experts and the local community to give it a second life. Every stage of the project was planned to protect the character of the original buildings while bringing them up to modern standards."
+        ]
+      },
+      {
+        "id": "design",
+        "title": "Design and Architecture",
+        "paragraphs": [
+          "The design keeps what makes the mill unique: exposed brick walls, heavy timber beams, and tall industrial windows. New elements in steel and glass are added with restraint, so that the old and the new can be read side by side."
+        ]
+      },
+      {
+        "id": "amenities",
+        "title": "Amenities",
+        "paragraphs": [
+          "The Old Mill offers a range of amenities for living and working, including:"
+        ],
+        "list": [
+          {
+            "name": "High-speed Wi-Fi",
+            "text": "Fiber connectivity in every home, studio, and shared space across the site."
+          },
+          {
+            "name": "Co-working lofts",
+            "text": "Bright, open workspaces with desks and meeting rooms for residents and local businesses."
+          },
+          {
+            "name": "Central courtyard",
+            "text": "A paved courtyard at the heart of the site, with seating, trees, and outdoor dining."
+          },
+          {
+            "name": "Market hall",
+            "text": "A restored hall that houses food stalls, makers, and independent shops."
+          },
+          {
+            "name": "Bike storage",
+            "text": "Secure, covered bike storage with a repair station and direct street access."
+          }
+        ]
+      },
+      {
+        "id": "community",
+        "title": "Community",
+        "paragraphs": [
+          "The Old Mill is more than a restored building. It is a meeting point for the whole neighborhood. Residents and visitors can enjoy a range of shared spaces, including:"
+        ],
+        "list": [
+          {
+            "name": "Artist studios",
+            "text": "Affordable studios for local artists and makers, open to the public on selected weekends."
+          },
+          {
+            "name": "Event hall",
+            "text": "A former machine room that now hosts concerts, exhibitions, and community gatherings."
+          },
+          {
+            "name": "Heritage walk",
+            "text": "A marked route through the site that tells the story of the mill and the people who worked there."
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "Conclusion",
+        "paragraphs": [
+          "The Old Mill proves that the best new places are sometimes the old ones. With its preserved character, practical amenities, and active community, it offers a way to live and work that is unlike anything else in the area."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "the-courtyard",
+    "name": "The Courtyard",
+    "type": "Residential",
+    "location": "Bethlehem, PA",
+    "costRange": "under-5m",
+    "tag": "Green spaces",
+    "image": "/images/projects/the-courtyard.webp",
+    "description": "The Courtyard is a residential community of mid-rise apartment buildings arranged around a landscaped central garden.",
+    "summary": "The Courtyard is a residential development of mid-rise apartment buildings arranged around a shared central garden. Private balconies, tree-lined paths, and quiet outdoor spaces bring nature into everyday life.",
+    "address": "25 Garden Court",
+    "article": [
+      {
+        "id": "planning",
+        "title": "Planning and Development",
+        "paragraphs": [
+          "The Courtyard began with the idea that a home should open onto green space, not onto traffic. Our team planned the site from the inside out, placing the garden first and arranging the buildings around it so that every resident would share the same view."
+        ]
+      },
+      {
+        "id": "design",
+        "title": "Design and Architecture",
+        "paragraphs": [
+          "The mid-rise buildings combine warm timber cladding with dark metal and glass, and every apartment has a private balcony facing the garden. Large windows, open layouts, and planted terraces keep the homes bright and connected to the outdoors."
+        ]
+      },
+      {
+        "id": "amenities",
+        "title": "Amenities",
+        "paragraphs": [
+          "The Courtyard offers a range of amenities for everyday living, including:"
+        ],
+        "list": [
+          {
+            "name": "Green spaces",
+            "text": "Landscaped lawns, hedges, and flower beds at the center of the community."
+          },
+          {
+            "name": "Private balconies",
+            "text": "A balcony for every apartment, with open views over the garden."
+          },
+          {
+            "name": "Water garden",
+            "text": "A reflecting pool with a timber deck, designed as a calm place to sit."
+          },
+          {
+            "name": "Walking paths",
+            "text": "Paved, car-free paths that connect every building to the garden."
+          },
+          {
+            "name": "Outdoor seating",
+            "text": "Benches and shaded seating areas placed throughout the courtyard."
+          }
+        ]
+      },
+      {
+        "id": "community",
+        "title": "Community",
+        "paragraphs": [
+          "The Courtyard is more than a group of buildings. It is a neighborhood built around a shared garden. Residents can enjoy a range of shared spaces, including:"
+        ],
+        "list": [
+          {
+            "name": "Garden terrace",
+            "text": "A raised terrace overlooking the lawns, ideal for small gatherings and summer evenings."
+          },
+          {
+            "name": "Residents' room",
+            "text": "A ground-floor room with a kitchen that neighbors can reserve for meetings and celebrations."
+          },
+          {
+            "name": "Play lawn",
+            "text": "An open lawn where children can play safely, in view of the surrounding homes."
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "Conclusion",
+        "paragraphs": [
+          "The Courtyard offers the calm of a garden with the convenience of the city. With its thoughtful layout, private outdoor spaces, and strong sense of community, it is the right choice for those who want a greener way to live."
+        ]
+      }
+    ]
+  }
+]
