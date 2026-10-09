@@ -1,0 +1,199 @@
+/*
+ * Theme de Pinnacle
+ * Origen: estilos locales del archivo de Figma (14 de color, 44 de texto, 1 de efecto)
+ * y valores leídos de los 15 frames en alcance (1440, 774 y 360).
+ * El comentario de cada token indica su nombre o su valor en Figma.
+ * Lo que no viene de Figma está marcado como «añadido».
+ * Aviso: algunos nombres coinciden con los de Tailwind pero llevan el valor del diseño:
+ * rounded-xl 10px, rounded-3xl 20px, leading-tight 1.2, leading-relaxed 1.6 y text-3xl en adelante.
+ */
+
+@theme {
+  /* Se vacían las categorías que el archivo define */
+  --color-*: initial;
+  --text-*: initial;
+  --font-*: initial;
+  --font-weight-*: initial;
+  --leading-*: initial;
+  --radius-*: initial;
+  --inset-shadow-*: initial;
+  --breakpoint-*: initial;
+
+  /* ── Primitivos · color ─────────────────────────────── */
+  --color-gray-1: #ffffff; /* gray/gray-1 */
+  --color-gray-2: #fcfcfc; /* gray/gray-2 */
+  --color-gray-3: #f5f5f5; /* gray/gray-3 */
+  --color-gray-4: #f0f0f0; /* gray/gray-4 */
+  --color-gray-5: #d9d9d9; /* gray/gray-5 */
+  --color-gray-6: #c0c0bf; /* gray/gray-6 */
+  --color-gray-7: #8d8d8c; /* gray/gray-7 */
+  --color-gray-8: #5b5a59; /* gray/gray-8 */
+  --color-gray-9: #464645; /* gray/gray-9 */
+  --color-gray-10: #282726; /* gray/gray-10 */
+  --color-gray-11: #201f1f; /* gray/gray-11 */
+  --color-gray-12: #161514; /* gray/gray-12 */
+  --color-gray-13: #020100; /* gray/gray-13 */
+  --color-orange-13: #ff5200; /* Accent (Orange-13) */
+  --color-rose-400: #fb7185; /* añadido A19: el archivo no tiene color de error */
+
+  /* ── Primitivos · tipografía ────────────────────────── */
+  --font-base: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Clash Display", ui-sans-serif, system-ui, sans-serif;
+
+  --text-2xs: 0.6875rem; /* 11 */
+  --text-xs: 0.75rem; /* 12 */
+  --text-sm: 0.875rem; /* 14 */
+  --text-base: 1rem; /* 16 */
+  --text-lg: 1.125rem; /* 18 */
+  --text-xl: 1.25rem; /* 20 */
+  --text-2xl: 1.5rem; /* 24 */
+  --text-3xl: 1.5625rem; /* 25 */
+  --text-4xl: 1.875rem; /* 30 */
+  --text-5xl: 2.375rem; /* 38 */
+  --text-6xl: 2.9375rem; /* 47 */
+  --text-7xl: 3.6875rem; /* 59 */
+  --text-8xl: 4.5625rem; /* 73 */
+  --text-9xl: 5.75rem; /* 92 */
+
+  --leading-none: 1; /* 100 % */
+  --leading-tight: 1.2; /* 120 % */
+  --leading-normal: 1.5; /* 150 % */
+  --leading-relaxed: 1.6; /* 160 % */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ── Primitivos · radios, efecto y breakpoints ──────── */
+  --radius-sm: 4px; /* casilla de aceptación */
+  --radius-md: 6px; /* flechas de carrusel, cajas de redes */
+  --radius-lg: 8px; /* botones, campos, cajas */
+  --radius-xl: 10px; /* botón Send */
+  --radius-2xl: 16px; /* tarjetas e imágenes */
+  --radius-3xl: 20px; /* reseñas del hero */
+
+  --inset-shadow-icon: inset -1px 3px 3px 0 #fc6e32; /* icon effet */
+
+  --breakpoint-md: 48.375rem; /* 774 */
+  --breakpoint-xl: 90rem; /* 1440 */
+
+  /* ── Semánticos · color ─────────────────────────────── */
+  --background-color-page: var(--color-gray-13);
+  --background-color-surface: var(--color-gray-12);
+  --background-color-surface-raised: var(--color-gray-11);
+
+  --text-color-default: var(--color-gray-4);
+  --text-color-muted: var(--color-gray-6);
+  --text-color-subtle: var(--color-gray-7);
+  --text-color-inverse: var(--color-gray-13);
+
+  --border-color-default: var(--color-gray-10);
+  --border-color-control: var(--color-gray-7);
+
+  --color-accent: var(--color-orange-13);
+  --color-feedback-danger: var(--color-rose-400);
+
+  /* ── Semánticos · familia por defecto ───────────────── */
+  --default-font-family: var(--font-base);
+
+  /* ── Estilos de texto · Clash Display (añadir font-heading) ── */
+  /* Heading/H2/Semibold · 92/100 % */
+  --text-h2: var(--text-9xl);
+  --text-h2--line-height: var(--leading-none);
+  --text-h2--font-weight: var(--font-weight-semibold);
+  /* Heading/H3/Semibold · 73/100 % */
+  --text-h3: var(--text-8xl);
+  --text-h3--line-height: var(--leading-none);
+  --text-h3--font-weight: var(--font-weight-semibold);
+  /* Heading/H4/Semibold · 59/100 % */
+  --text-h4: var(--text-7xl);
+  --text-h4--line-height: var(--leading-none);
+  --text-h4--font-weight: var(--font-weight-semibold);
+  /* Heading/H5/Semibold · 47/100 % */
+  --text-h5: var(--text-6xl);
+  --text-h5--line-height: var(--leading-none);
+  --text-h5--font-weight: var(--font-weight-semibold);
+  /* Heading/H6/Semibold · 38/100 % */
+  --text-h6: var(--text-5xl);
+  --text-h6--line-height: var(--leading-none);
+  --text-h6--font-weight: var(--font-weight-semibold);
+  /* Extra/30px-bold · 30/100 % · el peso real es Semibold */
+  --text-extra-30: var(--text-4xl);
+  --text-extra-30--line-height: var(--leading-none);
+  --text-extra-30--font-weight: var(--font-weight-semibold);
+  /* Extra/25px-bold · 25/100 % · el peso real es Semibold */
+  --text-extra-25: var(--text-3xl);
+  --text-extra-25--line-height: var(--leading-none);
+  --text-extra-25--font-weight: var(--font-weight-semibold);
+  /* Body/Medium/24px · 24/120 % · es Clash Display, no Satoshi */
+  --text-body-medium-24: var(--text-2xl);
+  --text-body-medium-24--line-height: var(--leading-tight);
+  --text-body-medium-24--font-weight: var(--font-weight-medium);
+
+  /* ── Estilos de texto · Satoshi Bold ────────────────── */
+  /* Body/Bold/24px · 24/150 % */
+  --text-body-bold-24: var(--text-2xl);
+  --text-body-bold-24--line-height: var(--leading-normal);
+  --text-body-bold-24--font-weight: var(--font-weight-bold);
+  /* Body/Bold/20px · 20/150 % */
+  --text-body-bold-20: var(--text-xl);
+  --text-body-bold-20--line-height: var(--leading-normal);
+  --text-body-bold-20--font-weight: var(--font-weight-bold);
+  /* Body/Bold/16px · 16/150 % */
+  --text-body-bold-16: var(--text-base);
+  --text-body-bold-16--line-height: var(--leading-normal);
+  --text-body-bold-16--font-weight: var(--font-weight-bold);
+  /* Body/Bold/14px · 14/150 % */
+  --text-body-bold-14: var(--text-sm);
+  --text-body-bold-14--line-height: var(--leading-normal);
+  --text-body-bold-14--font-weight: var(--font-weight-bold);
+  /* Body/Bold/10px · 11/150 % · el estilo se llama 10px y mide 11 */
+  --text-body-bold-11: var(--text-2xs);
+  --text-body-bold-11--line-height: var(--leading-normal);
+  --text-body-bold-11--font-weight: var(--font-weight-bold);
+
+  /* ── Estilos de texto · Satoshi Medium ──────────────── */
+  /* Body/Medium/20px · 20/150 % */
+  --text-body-medium-20: var(--text-xl);
+  --text-body-medium-20--line-height: var(--leading-normal);
+  --text-body-medium-20--font-weight: var(--font-weight-medium);
+  /* Body/Medium/18px · 18/150 % */
+  --text-body-medium-18: var(--text-lg);
+  --text-body-medium-18--line-height: var(--leading-normal);
+  --text-body-medium-18--font-weight: var(--font-weight-medium);
+  /* Body/Medium/16px · 16/150 % */
+  --text-body-medium-16: var(--text-base);
+  --text-body-medium-16--line-height: var(--leading-normal);
+  --text-body-medium-16--font-weight: var(--font-weight-medium);
+  /* Body/Medium/14px · 14/150 % */
+  --text-body-medium-14: var(--text-sm);
+  --text-body-medium-14--line-height: var(--leading-normal);
+  --text-body-medium-14--font-weight: var(--font-weight-medium);
+  /* Body/Medium/12px · 12/150 % */
+  --text-body-medium-12: var(--text-xs);
+  --text-body-medium-12--line-height: var(--leading-normal);
+  --text-body-medium-12--font-weight: var(--font-weight-medium);
+
+  /* ── Estilos de texto · Satoshi Regular ─────────────── */
+  /* Body/Regular/20px · 20/160 % */
+  --text-body-regular-20: var(--text-xl);
+  --text-body-regular-20--line-height: var(--leading-relaxed);
+  --text-body-regular-20--font-weight: var(--font-weight-regular);
+  /* Body/Regular/18px · 18/160 % */
+  --text-body-regular-18: var(--text-lg);
+  --text-body-regular-18--line-height: var(--leading-relaxed);
+  --text-body-regular-18--font-weight: var(--font-weight-regular);
+  /* Body/Regular/16px · 16/150 % */
+  --text-body-regular-16: var(--text-base);
+  --text-body-regular-16--line-height: var(--leading-normal);
+  --text-body-regular-16--font-weight: var(--font-weight-regular);
+  /* Body/Regular/14px · 14/150 % */
+  --text-body-regular-14: var(--text-sm);
+  --text-body-regular-14--line-height: var(--leading-normal);
+  --text-body-regular-14--font-weight: var(--font-weight-regular);
+  /* Body/Regular/12px · 12/150 % */
+  --text-body-regular-12: var(--text-xs);
+  --text-body-regular-12--line-height: var(--leading-normal);
+  --text-body-regular-12--font-weight: var(--font-weight-regular);
+}
