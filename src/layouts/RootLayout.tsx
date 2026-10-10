@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Outlet } from 'react-router'
+import { SiteFooter } from '../components/SiteFooter.tsx'
 import { SiteHeader } from '../components/SiteHeader.tsx'
 import { RouteFocus } from '../routing/RouteFocus.tsx'
 
@@ -26,10 +27,7 @@ function RootLayout() {
         <Outlet />
       </main>
 
-      {/* Pie temporal: lo sustituye el pie real */}
-      <footer id="footer" tabIndex={-1} inert={isMenuOpen} className="p-4 focus:outline-hidden">
-        <p>Temporary footer.</p>
-      </footer>
+      <SiteFooter inert={isMenuOpen} />
     </>
   )
 }
