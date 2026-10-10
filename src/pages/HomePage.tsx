@@ -1,4 +1,5 @@
 import { CtaSection } from '../components/CtaSection.tsx'
+import { FeaturedProjectsSection } from '../components/FeaturedProjectsSection.tsx'
 import { ServicesSection } from '../components/ServicesSection.tsx'
 import { usePageTitle } from '../routing/usePageTitle.ts'
 
@@ -18,6 +19,7 @@ function HomePage() {
           About
         </h2>
       </section>
+      <FeaturedProjectsSection />
       <ServicesSection />
       <section id="news" aria-labelledby="news-heading" className="min-h-dvh p-4">
         <h2 id="news-heading" tabIndex={-1} className="focus:outline-hidden">
