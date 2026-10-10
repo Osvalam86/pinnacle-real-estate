@@ -38,6 +38,7 @@ La skill `figma-design-to-code` llega con el plugin de Figma y se carga sola al 
 - Todo control tiene foco visible, hover y, si aplica, estados de error y de abierto.
 - Ningún `href="#"`: cada enlace tiene destino real.
 - Un solo texto por control en los tres anchos, y el orden del DOM coincide con el orden visual.
+- Excepción al orden del DOM: la barra inferior del footer a 360 invierte el orden visual con CSS, porque el diseño lo cambia entre anchos y el tabulador no varía.
 - Una composición de varios elementos se monta con sus elementos, no con una imagen aplanada.
 - Las fuentes (Clash Display y Satoshi) se cargan desde la API de Fontshare. Nunca se añaden archivos de fuente al repo: su licencia lo prohíbe.
 - Toda diferencia con el diseño se anota en `DESIGN.md` con valor original, valor corregido y motivo. Si `DESIGN.md` aún no existe, lista las anotaciones en el informe.
