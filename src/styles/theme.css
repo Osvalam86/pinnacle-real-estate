@@ -74,9 +74,20 @@
   --radius-3xl: 20px; /* reseñas del hero */
 
   --inset-shadow-icon: inset -1px 3px 3px 0 #fc6e32; /* icon effet */
+  --inset-shadow-button: inset -3px 5px 4px 0 #2c2c2c; /* Primary button gris: valor de capa sin estilo en Figma */
+  --inset-shadow-button-accent: inset -3px 5px 4px 0 #fe6d2f; /* Primary button naranja: valor de capa sin estilo en Figma */
 
   --breakpoint-md: 48.375rem; /* 774 */
   --breakpoint-xl: 90rem; /* 1440 */
+
+  /* Ancho máximo del contenido: el del frame de escritorio (1440); por encima se centra */
+  --container-page: 90rem;
+
+  /* ── Primitivos · capas (añadido: el archivo no define z-index) ── */
+  --z-index-raised: 10; /* elevado */
+  --z-index-backdrop: 30; /* fondo oscurecido del menú */
+  --z-index-menu: 40; /* barra y panel de menú */
+  --z-index-skip-link: 50; /* enlaces de salto */
 
   /* ── Semánticos · color ─────────────────────────────── */
   --background-color-page: var(--color-gray-13);
@@ -90,6 +101,9 @@
 
   --border-color-default: var(--color-gray-10);
   --border-color-control: var(--color-gray-7);
+
+  /* añadido: gray-1 es el único color con 3:1 o más sobre todos los fondos, incluido el acento */
+  --outline-color-focus: var(--color-gray-1);
 
   --color-accent: var(--color-orange-13);
   --color-feedback-danger: var(--color-rose-400);

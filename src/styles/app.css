@@ -1,3 +1,17 @@
 @import "tailwindcss" source("../");
 @import "./theme.css";
 @source "../../index.html";
+
+@layer base {
+  /* Contorno de foco común a todo elemento enfocable; las utilidades pueden sustituirlo */
+  :focus-visible {
+    outline: 2px solid var(--outline-color-focus);
+    outline-offset: 2px;
+  }
+
+  /* Mano en los botones activos (guía de actualización a v4); aria-disabled cubre las flechas de carrusel */
+  button:not(:disabled):not([aria-disabled="true"]),
+  [role="button"]:not(:disabled):not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+}
