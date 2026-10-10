@@ -6,6 +6,7 @@ Maquetación del diseño «Pinnacle» (Figma Community, Herve Wabo, CC BY 4.0) c
 
 - Páginas: Home, Projects, Project Details (`/projects/:slug`), Contact, 404 y una página genérica para los enlaces sin página propia.
 - Anchos del diseño: 1440, 774 y 360.
+- Breakpoints: `md` es 774 y `xl` es 1440 (definidos en `src/styles/theme.css`). Entre 774 y 1439 se ve la maqueta de tablet. Por encima de 1440 el contenido se limita a 1440 y se centra.
 - Fuera de alcance: API real, pruebas automatizadas propias, medidas de rendimiento y cualquier otra página del diseño.
 
 ## Stack
@@ -26,6 +27,8 @@ Comandos: `pnpm dev`, `pnpm build`, `pnpm lint`, `pnpm preview`.
 - Tokens: `theme-tokens`, con salida `@theme`.
 
 `semantic-markup` y `theme-tokens` vienen de la cuenta de Osvaldo, no del repo. Si alguna no aparece como disponible, para y dilo.
+
+La skill `figma-design-to-code` llega con el plugin de Figma y se carga sola al leer un diseño. En este proyecto sirve solo para leer valores. Sobre ella mandan CLAUDE.md, el bloque de la tarea y las skills `semantic-markup` y `tailwind-v4`. No se descargan recursos de Figma: las imágenes ya están en `public/images/` y los iconos los entrega Osvaldo. Los iconos que son el único contenido de un control van en línea con `currentColor`.
 
 ## Reglas de maquetación
 
