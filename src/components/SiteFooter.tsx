@@ -159,7 +159,7 @@ export function SiteFooter({ inert }: SiteFooterProps) {
 
           <nav
             aria-label="Footer"
-            className="flex flex-wrap justify-between gap-x-4 gap-y-8 whitespace-nowrap xl:flex-1 xl:justify-start xl:gap-x-16"
+            className="flex flex-wrap justify-between gap-x-4 gap-y-8 whitespace-nowrap xl:flex-1"
           >
             {NAV_GROUPS.map((group) => (
               <div key={group.title} className="flex flex-col gap-6">
