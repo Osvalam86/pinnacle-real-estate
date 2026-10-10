@@ -69,7 +69,7 @@ export function ServicesSection() {
       >
         <div className="flex flex-col items-center gap-8 md:gap-10">
           <div className="flex w-full flex-col gap-4 xl:gap-6">
-            <div className="flex items-center gap-2 md:justify-center md:gap-6">
+            <div className="flex items-center justify-center gap-2 md:gap-6">
               <h2
                 id={headingId}
                 tabIndex={-1}
@@ -85,7 +85,7 @@ export function ServicesSection() {
                 className="h-6 w-auto shrink-0 md:h-9.5"
               />
             </div>
-            <p className="text-body-regular-16 text-muted md:text-center md:text-body-regular-18 xl:w-168.5 xl:self-center">
+            <p className="text-center text-body-regular-16 text-muted md:max-w-173.5 md:self-center md:text-body-regular-18 xl:w-168.5">
               At Pinnacle, we offer a wide range of services to cater to your unique needs. From
               residential construction to commercial development, we've got you covered.
             </p>
