@@ -15,16 +15,21 @@ function focusWithoutScroll(element: HTMLElement | null) {
 
 // Desplazamiento y foco después de cada navegación. Los parámetros de búsqueda por sí solos nunca lo activan.
 export function RouteFocus() {
-  const { pathname, hash } = useLocation()
+  const { pathname, search, hash, key } = useLocation()
   const navigationType = useNavigationType()
   const isFirstRun = useRef(true)
-  const previousPathname = useRef(pathname)
+  const previousLocation = useRef({ pathname, search, hash })
 
+  // key va en las dependencias porque un enlace a la URL actual navega con replace
+  // y solo cambia key: así cada activación repite el desplazamiento y el foco
   useEffect(() => {
     const firstRun = isFirstRun.current
-    const pathnameChanged = previousPathname.current !== pathname
+    const previous = previousLocation.current
+    const pathnameChanged = previous.pathname !== pathname
     isFirstRun.current = false
-    previousPathname.current = pathname
+    previousLocation.current = { pathname, search, hash }
+
+    if (!pathnameChanged && previous.hash === hash && previous.search !== search) return
 
     const target = findHashTarget(hash)
     if (target) {
@@ -37,15 +42,15 @@ export function RouteFocus() {
       return
     }
 
-    // Un ancla cuyo id no existe se trata como un cambio de ruta
-    if (!hash && (firstRun || !pathnameChanged)) return
+    // Un ancla cuyo id no existe, o un enlace a la ruta actual sin ancla, se trata como un cambio de ruta
+    if (!hash && (firstRun || (!pathnameChanged && navigationType === 'POP'))) return
 
     // Al ir atrás o adelante, el navegador restaura el desplazamiento
     if (navigationType !== 'POP') {
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
     }
     focusWithoutScroll(document.querySelector<HTMLElement>('h1'))
-  }, [pathname, hash, navigationType])
+  }, [pathname, search, hash, key, navigationType])
 
   return null
 }
