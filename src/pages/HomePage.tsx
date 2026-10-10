@@ -1,3 +1,4 @@
+import { CtaSection } from '../components/CtaSection.tsx'
 import { usePageTitle } from '../routing/usePageTitle.ts'
 
 function HomePage() {
@@ -40,6 +41,8 @@ function HomePage() {
           FAQ
         </h2>
       </section>
+
+      <CtaSection />
     </>
   )
 }

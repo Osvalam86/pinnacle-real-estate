@@ -1,4 +1,5 @@
 import { useParams } from 'react-router'
+import { CtaSection } from '../components/CtaSection.tsx'
 import projects from '../data/projects.json'
 import { usePageTitle } from '../routing/usePageTitle.ts'
 import NotFoundPage from './NotFoundPage.tsx'
@@ -20,9 +21,13 @@ function ProjectDetails({ project }: { project: Project }) {
   usePageTitle(`${project.name} – Pinnacle`)
 
   return (
-    <h1 tabIndex={-1} className="p-4 focus:outline-hidden">
-      {project.name}
-    </h1>
+    <>
+      <h1 tabIndex={-1} className="p-4 focus:outline-hidden">
+        {project.name}
+      </h1>
+
+      <CtaSection />
+    </>
   )
 }
 

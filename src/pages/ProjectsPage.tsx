@@ -1,3 +1,4 @@
+import { CtaSection } from '../components/CtaSection.tsx'
 import { usePageTitle } from '../routing/usePageTitle.ts'
 
 function ProjectsPage() {
@@ -15,6 +16,8 @@ function ProjectsPage() {
           Search
         </h2>
       </section>
+
+      <CtaSection />
     </>
   )
 }
