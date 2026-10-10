@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "react": "^19.2.8",
+    "react-aria-components": "^1.22.0",
     "react-dom": "^19.2.8",
     "react-router": "^8.4.0"
   },
