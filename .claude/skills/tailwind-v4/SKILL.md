@@ -123,7 +123,9 @@ Antes de escribir un corchete que no reconozcas en esta lista, consulta `referen
 
 **Layout.** Lee `references/patrones.md` al maquetar una vista o un layout.
 
-- La separación entre elementos es `gap` en un contenedor flex o grid, para que un hijo pueda moverse u ocultarse sin dejar márgenes sueltos.
+- La separación entre elementos es `gap` en un contenedor flex o grid, para que un hijo pueda moverse u ocultarse sin dejar márgenes sueltos. Donde el diseño usa auto layout, o la separación cabe en un `gap`, no se usa margin (`m-` `mt-` `mb-` `ms-` `me-` `mx-` `my-`) ni `space-x-*` / `space-y-*`. Si el padre no es flex ni grid, se convierte.
+- El margin queda para lo que `gap` no puede expresar: centrar un bloque (`mx-auto`) y márgenes negativos cuando el diseño los usa o hacen falta para lograrlo (una separación negativa del auto layout, un solape, un elemento que se sale de su contenedor). Cada margin que no sea `mx-auto` lleva un comentario con su motivo.
+- Un hijo que puede quedar vacío (un `role="status"`, un mensaje de error) no deja hueco ni recibe margin: se saca del flujo mientras está vacío.
 - Grid para el layout de página y las rejillas; flex para alinear dentro de un componente.
 - Móvil primero: la clase sin prefijo es el caso base y los breakpoints suman. `max-md:` queda para excepciones.
 - Container queries (`@container` con `@md:`) cuando el componente debe adaptarse a su contenedor y no al viewport.
@@ -190,11 +192,12 @@ Después, un reporte con solo las secciones que tengan contenido:
 ```
 **Theme** — tokens agregados o modificados y en qué archivo.
 **Corchetes** — cada corchete que quedó, con su motivo en una línea.
+**Márgenes** — cada utilidad de margin que no sea `mx-auto`, con su motivo en una línea.
 **Divergencias** — valores del diseño fuera de escala o sin token, y huecos (estados o breakpoints no definidos).
 **Verificación** — resultado del script, o por qué no se ejecutó.
 ```
 
-La línea de verificación va siempre. Si no hubo cambios de theme, corchetes ni divergencias, el reporte es esa sola línea.
+La línea de verificación va siempre. Si no hubo cambios de theme, corchetes, márgenes ni divergencias, el reporte es esa sola línea.
 
 ## Reglas estrictas
 
@@ -206,6 +209,7 @@ Además de lo que piden los pasos:
 - Además de los archivos del encargo, solo se tocan el CSS de entrada y los archivos CSS que importa. Cualquier otro archivo (configuración, `package.json`) se modifica tras confirmarlo con el usuario.
 - No se agregan dependencias sin confirmación. La instalación de Tailwind sigue `references/setup.md`.
 - Todo elemento enfocable conserva un indicador de foco visible.
+- Los elementos se separan con `gap`, no con margin. El margin solo se admite para centrar (`mx-auto`) y en negativo cuando el diseño lo requiere, con su motivo anotado.
 - `!` solo para sobrescribir estilos de terceros que no se pueden mover a una capa.
 
 ## Referencias

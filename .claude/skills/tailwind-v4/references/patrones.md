@@ -36,7 +36,32 @@
 - **Grid** para el layout de página, las rejillas y todo lo que se alinea en dos ejes.
 - **Flex** para alinear elementos dentro de un componente (el equivalente del auto layout de Figma).
 - **Subgrid** para que los hijos de una tarjeta se alineen con los de sus hermanas: `grid grid-rows-subgrid row-span-3`.
-- El margin queda para separar algo de un borde externo que no es su contenedor, como centrar un bloque (`mx-auto`).
+**Sin margin para separar.** Donde el diseño usa auto layout, o la separación cabe en un `gap`, no se usa margin ni `space-x-*` / `space-y-*`. Si el padre no es flex ni grid, se convierte.
+
+```html
+<!-- No: cada hijo carga con su separación -->
+<section>
+  <header>…</header>
+  <ul class="mt-10">…</ul>
+  <button class="mx-auto mt-10 block">…</button>
+</section>
+
+<!-- Sí: la separación y la alineación son del contenedor -->
+<section class="flex flex-col gap-10">
+  <header>…</header>
+  <ul>…</ul>
+  <button class="self-center">…</button>
+</section>
+```
+
+El margin queda para lo que `gap` no puede expresar:
+
+- Centrar un bloque: `mx-auto`.
+- Márgenes negativos, cuando el diseño los usa o hacen falta para lograrlo: una separación negativa del auto layout (`gap` no admite negativos), un solape entre dos elementos o un elemento que se sale de su contenedor.
+
+Cada margin que no sea `mx-auto` lleva un comentario con su motivo y se lista en la entrega.
+
+**Hijos que pueden quedar vacíos.** Un `role="status"` o un mensaje de error que a veces no tiene contenido sigue siendo un hijo del contenedor y recibe su `gap`. No se le da margin condicional: se saca del flujo mientras está vacío (`empty:sr-only`, o `sr-only` según el estado) y vuelve al flujo cuando tiene texto. Sigue en el DOM, así el lector de pantalla anuncia el cambio.
 
 ## 2. Responsivo
 

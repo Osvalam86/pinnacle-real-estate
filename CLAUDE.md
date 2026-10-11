@@ -40,6 +40,7 @@ La skill `figma-design-to-code` llega con el plugin de Figma y se carga sola al 
 - Un solo texto por control en los tres anchos, y el orden del DOM coincide con el orden visual.
 - Excepción al orden del DOM: la barra inferior del footer a 360 invierte el orden visual con CSS, porque el diseño lo cambia entre anchos y el tabulador no varía.
 - Una composición de varios elementos se monta con sus elementos, no con una imagen aplanada.
+- La separación entre elementos es gap en el padre (flex o grid), como el auto layout de Figma. No se usa margin para separar. Solo se admite mx-auto para centrar y margin negativo cuando el diseño lo requiere; cada uno lleva un comentario con su motivo y se lista en el informe.
 - Las fuentes (Clash Display y Satoshi) se cargan desde la API de Fontshare. Nunca se añaden archivos de fuente al repo: su licencia lo prohíbe.
 - Toda diferencia con el diseño se anota en `DESIGN.md` con valor original, valor corregido y motivo. Si `DESIGN.md` aún no existe, lista las anotaciones en el informe.
 
