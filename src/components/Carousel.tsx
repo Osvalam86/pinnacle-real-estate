@@ -117,8 +117,10 @@ export function Carousel<T>({
   return (
     <div className={`flex flex-col gap-8 ${className}`}>
       {/* El carril llega a los bordes de la ventana hasta xl: márgenes negativos iguales al relleno de la sección */}
+      {/* tabIndex -1: Firefox hace enfocable con Tab toda caja con desplazamiento; aquí se llega por los enlaces y las flechas */}
       <ul
         ref={listRef}
+        tabIndex={-1}
         className="-mx-4 flex snap-x snap-mandatory scroll-px-4 items-start gap-4 overflow-x-auto px-4 [scrollbar-width:none] motion-safe:scroll-smooth md:-mx-10 md:scroll-px-10 md:px-10 xl:mx-0 xl:scroll-px-0 xl:px-0"
       >
         {items.map((item) => (
