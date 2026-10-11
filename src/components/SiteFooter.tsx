@@ -102,7 +102,7 @@ function NewsletterForm() {
   const hasError = feedback?.kind === 'error'
 
   return (
-    <form noValidate onSubmit={handleSubmit} className="w-full max-w-76.25">
+    <form noValidate onSubmit={handleSubmit} className="flex w-full max-w-76.25 flex-col gap-2">
       <label htmlFor={inputId} className="sr-only">
         Email address
       </label>
@@ -135,7 +135,7 @@ function NewsletterForm() {
       <p
         id={messageId}
         role="status"
-        className={`max-w-76.25 text-body-medium-14 not-empty:mt-2 ${hasError ? 'text-feedback-danger' : 'text-default'}`}
+        className={`max-w-76.25 text-body-medium-14 empty:sr-only ${hasError ? 'text-feedback-danger' : 'text-default'}`}
       >
         {feedback?.text}
       </p>
