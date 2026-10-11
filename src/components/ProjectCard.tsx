@@ -49,7 +49,12 @@ export function ProjectCard({
       />
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
-          <Heading id={titleId} className="font-heading text-body-medium-24 text-default">
+          {/* Enfocable por programa: «See More» lleva el foco al título de la primera tarjeta nueva */}
+          <Heading
+            id={titleId}
+            tabIndex={-1}
+            className="font-heading text-body-medium-24 text-default focus:outline-hidden"
+          >
             {name}
           </Heading>
           <p className="line-clamp-2 text-body-regular-16 text-muted">{description}</p>

@@ -1,7 +1,7 @@
 import { useId, useState, type ComponentType, type FormEvent } from 'react'
 import { Link, useLocation, useNavigate, useSearchParams } from 'react-router'
 import projects from '../data/projects.json'
-import { projectFilters, type ProjectFilter } from '../data/projectFilters.ts'
+import { projectFilters, readSearchValues, type ProjectFilter } from '../data/projectFilters.ts'
 import { SEARCH_FORM_STATE } from '../routing/navigationState.ts'
 import { BillIcon, BoxIcon, ChevronIcon, FlagIcon } from './icons.tsx'
 
@@ -40,31 +40,24 @@ const FILTER_WIDTH_CLASSES: Record<ProjectFilter['name'], string> = {
   cost: 'xl:shrink-0',
 }
 
-type SearchValues = { q: string } & Record<ProjectFilter['name'], string>
-
-// Un valor que no está en la lista se trata como sin filtro
-function readValues(params: URLSearchParams): SearchValues {
-  const values: SearchValues = { q: params.get('q') ?? '', location: '', type: '', cost: '' }
-  for (const filter of projectFilters) {
-    const value = params.get(filter.name) ?? ''
-    if (filter.options.some((option) => option.value === value)) values[filter.name] = value
-  }
-  return values
+type SearchFormProps = {
+  /** Se llama en cada envío, también cuando la URL no cambia, con la búsqueda resultante */
+  onSearch: (search: string) => void
 }
 
-function SearchForm() {
+function SearchForm({ onSearch }: SearchFormProps) {
   const inputId = useId()
   const location = useLocation()
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
-  const [values, setValues] = useState(() => readValues(searchParams))
+  const [values, setValues] = useState(() => readSearchValues(searchParams))
   const [syncedSearch, setSyncedSearch] = useState(location.search)
 
   // Los campos se releen cuando cambian los parámetros (atrás, adelante, enlace con otros filtros);
   // una navegación que no los cambia, como un enlace de salto, conserva lo escrito sin enviar
   if (location.search !== syncedSearch) {
     setSyncedSearch(location.search)
-    setValues(readValues(searchParams))
+    setValues(readSearchValues(searchParams))
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -78,6 +71,7 @@ function SearchForm() {
     setValues({ ...values, q })
 
     const search = params.size > 0 ? `?${params}` : ''
+    onSearch(search)
     const isCurrentUrl =
       location.pathname === '/projects' && location.search === search && location.hash === ''
     if (isCurrentUrl) return
@@ -91,7 +85,7 @@ function SearchForm() {
       id="search"
       tabIndex={-1}
       onSubmit={handleSubmit}
-      className="relative mx-4 -mt-12 flex flex-col gap-2 rounded-lg bg-surface p-2 focus:outline-hidden md:mx-8 xl:mx-16 xl:flex-row"
+      className="flex flex-col gap-2 rounded-lg bg-surface p-2 focus:outline-hidden xl:flex-row"
     >
       <div className="xl:min-w-70 xl:grow xl:basis-70">
         <label htmlFor={inputId} className="sr-only">
@@ -182,7 +176,7 @@ function FilterSelect({ filter, value, onChange }: FilterSelectProps) {
   )
 }
 
-export function ProjectsHero() {
+export function ProjectsHero({ onSearch }: SearchFormProps) {
   return (
     <div className="mx-auto max-w-page px-4 pt-14 md:px-10 md:pt-26 xl:px-16">
       <div className="relative">
@@ -207,7 +201,11 @@ export function ProjectsHero() {
           ))}
         </ul>
       </div>
-      <SearchForm />
+      {/* -mt-12: en Figma el hero es un auto layout con separación de -48 entre el mapa y el
+          buscador, y gap no admite negativos. relative lo pinta por encima del mapa */}
+      <div className="relative -mt-12 px-4 md:px-8 xl:px-16">
+        <SearchForm onSearch={onSearch} />
+      </div>
     </div>
   )
 }

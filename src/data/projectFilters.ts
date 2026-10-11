@@ -53,3 +53,27 @@ export const projectFilters: ProjectFilter[] = [
     ],
   },
 ]
+
+export type SearchValues = { q: string } & Record<ProjectFilter['name'], string>
+
+// Un valor que no está en la lista se trata como sin filtro
+export function readSearchValues(params: URLSearchParams): SearchValues {
+  const values: SearchValues = { q: params.get('q') ?? '', location: '', type: '', cost: '' }
+  for (const filter of projectFilters) {
+    const value = params.get(filter.name) ?? ''
+    if (filter.options.some((option) => option.value === value)) values[filter.name] = value
+  }
+  return values
+}
+
+type FilterableProject = { name: string } & Record<ProjectFilter['field'], string>
+
+// q: el nombre contiene el texto, sin distinguir mayúsculas; el resto: coincidencia exacta. Todos deben cumplirse.
+export function matchesSearch(project: FilterableProject, values: SearchValues) {
+  const q = values.q.trim().toLowerCase()
+  if (q && !project.name.toLowerCase().includes(q)) return false
+  return projectFilters.every((filter) => {
+    const option = filter.options.find((item) => item.value === values[filter.name])
+    return !option || project[filter.field] === option.match
+  })
+}
