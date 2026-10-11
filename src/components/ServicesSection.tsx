@@ -23,12 +23,13 @@ function ServiceCard({ title, description }: Service) {
 
   return (
     <li className="flex flex-col gap-8 rounded-2xl border border-default bg-page px-3.75 pt-3.75 pb-5.75 md:px-5.75 md:pt-5.75 md:pb-7.75">
+      {/* Sin carga diferida y con decodificación síncrona: cada pestaña monta imágenes nuevas y Firefox las pintaba con un destello */}
       <img
         src="/images/shared/card-default.webp"
         alt=""
         width="379"
         height="300"
-        loading="lazy"
+        decoding="sync"
         className="h-75 w-full rounded-2xl object-cover"
       />
       <div className="flex flex-col items-start gap-6">
