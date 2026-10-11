@@ -3,6 +3,11 @@
 @source "../../index.html";
 
 @layer base {
+  /* El sitio solo tiene modo oscuro: controles y barras del navegador en oscuro */
+  :root {
+    color-scheme: dark;
+  }
+
   /* Contorno de foco común a todo elemento enfocable; las utilidades pueden sustituirlo */
   :focus-visible {
     outline: 2px solid var(--outline-color-focus);

@@ -1,4 +1,5 @@
 import { CtaSection } from '../components/CtaSection.tsx'
+import { ProjectsHero } from '../components/ProjectsHero.tsx'
 import { usePageTitle } from '../routing/usePageTitle.ts'
 
 function ProjectsPage() {
@@ -6,16 +7,13 @@ function ProjectsPage() {
 
   return (
     <>
-      <h1 tabIndex={-1} className="p-4 focus:outline-hidden">
+      <ProjectsHero />
+
+      {/* h1 provisional hasta el bloque 2 de Projects. Va después del buscador:
+          al entrar en la página el foco va al inicio del contenido, no al título */}
+      <h1 data-route-focus="main" tabIndex={-1} className="p-4 focus:outline-hidden">
         Our Exceptional Projects
       </h1>
-
-      {/* Sección temporal para probar las anclas: la sustituye la búsqueda real */}
-      <section id="search" aria-labelledby="search-heading" className="min-h-dvh p-4">
-        <h2 id="search-heading" tabIndex={-1} className="focus:outline-hidden">
-          Search
-        </h2>
-      </section>
 
       <CtaSection />
     </>

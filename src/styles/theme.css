@@ -76,6 +76,7 @@
   --inset-shadow-icon: inset -1px 3px 3px 0 #fc6e32; /* icon effet */
   --inset-shadow-button: inset -3px 5px 4px 0 #2c2c2c; /* Primary button gris: valor de capa sin estilo en Figma */
   --inset-shadow-button-accent: inset -3px 5px 4px 0 #fe6d2f; /* Primary button naranja: valor de capa sin estilo en Figma */
+  --inset-shadow-pin-dot: inset 0 1px 2px 0 rgb(224 224 224 / 0.56); /* Ellipse 14: valor de capa sin estilo en Figma */
 
   --breakpoint-md: 48.375rem; /* 774 */
   --breakpoint-xl: 90rem; /* 1440 */

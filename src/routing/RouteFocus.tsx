@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react'
 import { useLocation, useNavigationType } from 'react-router'
+import { isSearchFormNavigation } from './navigationState.ts'
 
 // Ids cuyo elemento recibe el foco él mismo, en lugar de su primer encabezado
-const SELF_FOCUS_IDS = new Set(['main-content', 'footer'])
+const SELF_FOCUS_IDS = new Set(['main-content', 'footer', 'search'])
 
 function findHashTarget(hash: string) {
   if (!hash) return null
@@ -13,9 +14,10 @@ function focusWithoutScroll(element: HTMLElement | null) {
   element?.focus({ preventScroll: true })
 }
 
-// Desplazamiento y foco después de cada navegación. Los parámetros de búsqueda por sí solos nunca lo activan.
+// Desplazamiento y foco después de cada navegación, salvo las del buscador y atrás/adelante entre parámetros
 export function RouteFocus() {
-  const { pathname, search, hash, key } = useLocation()
+  const { pathname, search, hash, key, state } = useLocation()
+  const fromSearchForm = isSearchFormNavigation(state)
   const navigationType = useNavigationType()
   const isFirstRun = useRef(true)
   const previousLocation = useRef({ pathname, search, hash })
@@ -29,7 +31,19 @@ export function RouteFocus() {
     isFirstRun.current = false
     previousLocation.current = { pathname, search, hash }
 
-    if (!pathnameChanged && previous.hash === hash && previous.search !== search) return
+    // El buscador de Projects cambia la URL sin mover foco ni desplazamiento; la marca no cuenta
+    // si cambia la ruta (por ejemplo, al volver con atrás desde un proyecto)
+    if (fromSearchForm && !pathnameChanged) return
+
+    // Atrás y adelante entre parámetros no mueven nada; un enlace que solo cambia parámetros
+    // se trata como un enlace a la página actual
+    if (
+      !pathnameChanged &&
+      previous.hash === hash &&
+      previous.search !== search &&
+      navigationType === 'POP'
+    )
+      return
 
     const target = findHashTarget(hash)
     if (target) {
@@ -49,8 +63,12 @@ export function RouteFocus() {
     if (navigationType !== 'POP') {
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
     }
-    focusWithoutScroll(document.querySelector<HTMLElement>('h1'))
-  }, [pathname, search, hash, key, navigationType])
+    // Una página cuyo h1 no está al inicio lo declara con data-route-focus="main": el foco va al inicio del contenido
+    const heading = document.querySelector<HTMLElement>('h1')
+    focusWithoutScroll(
+      heading?.dataset.routeFocus === 'main' ? document.getElementById('main-content') : heading,
+    )
+  }, [pathname, search, hash, key, navigationType, fromSearchForm])
 
   return null
 }
