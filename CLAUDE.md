@@ -17,7 +17,7 @@ Comandos: `pnpm dev`, `pnpm build`, `pnpm lint`, `pnpm preview`.
 
 ## Archivos que no se tocan sin pedirlo
 
-- `src/data/projects.json`: contenido aprobado de los 6 proyectos.
+- `src/data/projects.json`: contenido aprobado de los 9 proyectos.
 - `public/images/`: imágenes con nombres y rutas ya fijados. No renombrar, convertir ni optimizar.
 
 ## Skills
