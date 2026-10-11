@@ -508,5 +508,260 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "the-arcade",
+    "name": "The Arcade",
+    "type": "Commercial",
+    "location": "Bethlehem, PA",
+    "costRange": "5m-20m",
+    "tag": "Food hall",
+    "image": "/images/projects/the-arcade.webp",
+    "description": "The Arcade is a retail and dining destination that brings 30 shops and restaurants together under a glass-roofed walkway.",
+    "summary": "The Arcade is a retail and dining development that gathers 30 shops, cafés, and restaurants along a glass-roofed central walkway. Daylight, generous storefronts, and an easy layout make it a place people return to.",
+    "address": "60 Market Street",
+    "article": [
+      {
+        "id": "planning",
+        "title": "Planning and Development",
+        "paragraphs": [
+          "The Arcade was planned to give the neighborhood a place to shop, eat, and meet that feels like a street rather than a mall. Our team worked with local retailers and the city from the first market study to opening day, shaping a mix of tenants that serves residents throughout the week."
+        ]
+      },
+      {
+        "id": "design",
+        "title": "Design and Architecture",
+        "paragraphs": [
+          "A glass roof runs the full length of the central walkway, filling the building with daylight in every season. Brick, steel, and timber storefronts give each tenant its own identity, while wide entrances and clear sightlines make the whole building easy to navigate."
+        ]
+      },
+      {
+        "id": "amenities",
+        "title": "Amenities",
+        "paragraphs": [
+          "The Arcade offers a range of amenities for visitors and tenants, including:"
+        ],
+        "list": [
+          {
+            "name": "Food hall",
+            "text": "A shared dining hall with local kitchens and seating for 200 guests."
+          },
+          {
+            "name": "Covered walkway",
+            "text": "A glass-roofed promenade that keeps the shops comfortable in any weather."
+          },
+          {
+            "name": "Visitor parking",
+            "text": "Two levels of parking with electric vehicle charging and direct access to the shops."
+          },
+          {
+            "name": "Bike storage",
+            "text": "Secure bicycle parking at both entrances."
+          },
+          {
+            "name": "Family rooms",
+            "text": "Quiet, fully equipped rooms for parents and young children."
+          }
+        ]
+      },
+      {
+        "id": "community",
+        "title": "Community",
+        "paragraphs": [
+          "The Arcade is more than a place to shop. It is a meeting point for the neighborhood. Visitors can enjoy a range of shared spaces, including:"
+        ],
+        "list": [
+          {
+            "name": "Central court",
+            "text": "An open court at the heart of the building, used for seasonal markets and live music."
+          },
+          {
+            "name": "Pop-up stalls",
+            "text": "Small units that local makers can rent by the week to test new ideas."
+          },
+          {
+            "name": "Outdoor terrace",
+            "text": "A street-level terrace with tables and trees that extends the food hall outdoors."
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "Conclusion",
+        "paragraphs": [
+          "The Arcade brings everyday retail back to the center of the community. With its bright design, practical amenities, and local character, it is the right choice for businesses that want to be part of neighborhood life."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "the-workshop",
+    "name": "The Workshop",
+    "type": "Commercial",
+    "location": "Upper Macungie Township, PA",
+    "costRange": "under-5m",
+    "tag": "Loading bays",
+    "image": "/images/projects/the-workshop.webp",
+    "description": "The Workshop is a compact commercial development of flexible studio units for small businesses, makers, and start-ups.",
+    "summary": "The Workshop is a commercial development of 16 flexible units built for small businesses, makers, and start-ups. Tall ceilings, roll-up doors, and shared services give growing companies room to build, store, and sell.",
+    "address": "12 Foundry Lane",
+    "article": [
+      {
+        "id": "planning",
+        "title": "Planning and Development",
+        "paragraphs": [
+          "The Workshop grew out of a simple observation: small companies were struggling to find space between a home garage and a full warehouse. Our team studied what local makers and trades needed, and planned a site where a business can start with one unit and expand next door."
+        ]
+      },
+      {
+        "id": "design",
+        "title": "Design and Architecture",
+        "paragraphs": [
+          "Each unit pairs a double-height work floor with a mezzanine office, a roll-up door, and a glazed storefront. A simple palette of metal cladding, concrete, and timber keeps the buildings durable, and shared service yards keep deliveries away from the entrances."
+        ]
+      },
+      {
+        "id": "amenities",
+        "title": "Amenities",
+        "paragraphs": [
+          "The Workshop offers a range of amenities designed for working businesses, including:"
+        ],
+        "list": [
+          {
+            "name": "Loading bays",
+            "text": "Covered bays with level access for vans and small trucks."
+          },
+          {
+            "name": "High-speed Wi-Fi",
+            "text": "Fiber connectivity in every unit and across the shared areas."
+          },
+          {
+            "name": "Mezzanine offices",
+            "text": "A bright office level above each work floor."
+          },
+          {
+            "name": "Shared meeting room",
+            "text": "A bookable room with a screen and seating for twelve."
+          },
+          {
+            "name": "On-site parking",
+            "text": "Parking at the door of every unit, with charging points for electric vehicles."
+          }
+        ]
+      },
+      {
+        "id": "community",
+        "title": "Community",
+        "paragraphs": [
+          "The Workshop is more than a row of units. It is a place where small businesses work side by side. Tenants share a range of common spaces, including:"
+        ],
+        "list": [
+          {
+            "name": "Makers' yard",
+            "text": "A central yard for open days, markets, and product demonstrations."
+          },
+          {
+            "name": "Shared kitchen",
+            "text": "A common kitchen and lounge where neighbors meet over coffee."
+          },
+          {
+            "name": "Tool library",
+            "text": "A lending room for equipment that small teams use only now and then."
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "Conclusion",
+        "paragraphs": [
+          "The Workshop gives small businesses a professional home without a large commitment. With its flexible units, practical amenities, and community of makers, it is the right choice for companies that are ready to take the next step."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "the-terraces",
+    "name": "The Terraces",
+    "type": "Mixed-use",
+    "location": "Allentown, PA",
+    "costRange": "over-20m",
+    "tag": "Rooftop gardens",
+    "image": "/images/projects/the-terraces.webp",
+    "description": "The Terraces is a mixed-use development of stepped buildings that combine apartments, offices, and street-level shops.",
+    "summary": "The Terraces is a mixed-use development where apartments, offices, and street-level shops share a series of stepped buildings. Every level opens onto a planted terrace, bringing light, air, and greenery to the whole block.",
+    "address": "310 Hillside Avenue",
+    "article": [
+      {
+        "id": "planning",
+        "title": "Planning and Development",
+        "paragraphs": [
+          "The Terraces was planned for a sloping site at the edge of downtown, where a conventional tower would have blocked the view for everyone behind it. Our team worked with the city and neighbors to shape buildings that step down the hill, keeping sightlines open and the street active."
+        ]
+      },
+      {
+        "id": "design",
+        "title": "Design and Architecture",
+        "paragraphs": [
+          "The stepped profile gives every floor an outdoor terrace, planted with trees and native grasses. Shops and cafés line the ground floor, offices fill the lower levels, and apartments sit above, each with wide windows and views across the city."
+        ]
+      },
+      {
+        "id": "amenities",
+        "title": "Amenities",
+        "paragraphs": [
+          "The Terraces offers a range of amenities for residents, tenants, and visitors, including:"
+        ],
+        "list": [
+          {
+            "name": "Rooftop gardens",
+            "text": "Planted terraces on every level, with seating and open views."
+          },
+          {
+            "name": "Fitness center",
+            "text": "A fully equipped gym with studios for classes."
+          },
+          {
+            "name": "Coworking lounge",
+            "text": "A shared workspace for residents and small teams."
+          },
+          {
+            "name": "Street-level shops",
+            "text": "Cafés, restaurants, and everyday stores at the base of the buildings."
+          },
+          {
+            "name": "Underground parking",
+            "text": "Secure parking with electric vehicle charging and bicycle storage."
+          }
+        ]
+      },
+      {
+        "id": "community",
+        "title": "Community",
+        "paragraphs": [
+          "The Terraces is more than a group of buildings. It is a neighborhood where people live, work, and meet. Residents and tenants share a range of common spaces, including:"
+        ],
+        "list": [
+          {
+            "name": "Public plaza",
+            "text": "A paved square with trees and a fountain that hosts markets and outdoor events."
+          },
+          {
+            "name": "Community room",
+            "text": "A flexible hall for classes, meetings, and celebrations."
+          },
+          {
+            "name": "Hillside steps",
+            "text": "A landscaped stairway that connects the plaza to the upper terraces and the streets above."
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "Conclusion",
+        "paragraphs": [
+          "The Terraces shows how a dense block can still feel open and green. With its layered design, generous amenities, and lively street life, it is the right choice for those who want the city at their door."
+        ]
+      }
+    ]
   }
 ]

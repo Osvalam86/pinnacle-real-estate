@@ -22,6 +22,9 @@ const IMAGE_SIZES: Record<string, { width: number; height: number }> = {
   '/images/projects/the-skyline.webp': { width: 379, height: 300 },
   '/images/projects/the-old-mill.webp': { width: 379, height: 300 },
   '/images/projects/the-courtyard.webp': { width: 379, height: 300 },
+  '/images/projects/the-arcade.webp': { width: 2752, height: 1536 },
+  '/images/projects/the-workshop.webp': { width: 2752, height: 1536 },
+  '/images/projects/the-terraces.webp': { width: 2752, height: 1536 },
 }
 
 export function ProjectCard({

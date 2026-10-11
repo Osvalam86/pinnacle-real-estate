@@ -8,19 +8,31 @@ import { ProjectCard } from './ProjectCard.tsx'
 
 type Project = (typeof projects)[number]
 
-// Por debajo de xl se ven como máximo 4 tarjetas hasta pulsar «See More»
+// Tarjetas visibles hasta pulsar «See More»: 4 por debajo de xl y 6 desde xl
 const COLLAPSED_COUNT = 4
+const COLLAPSED_COUNT_XL = 6
 
 const PARAGRAPH_CLASSES = 'text-body-regular-16 text-muted md:text-body-regular-18'
+
+// Plegada, cada tarjeta se oculta con CSS según su posición; el ancho no se lee con JavaScript
+function getCollapsedClasses(index: number) {
+  if (index >= COLLAPSED_COUNT_XL) return 'hidden'
+  if (index >= COLLAPSED_COUNT) return 'hidden xl:block'
+  return undefined
+}
 
 function ProjectGrid({ results }: { results: Project[] }) {
   const listRef = useRef<HTMLUListElement>(null)
   const [isExpanded, setIsExpanded] = useState(false)
 
   function handleSeeMore() {
-    // Se pinta antes de mover el foco: el título de la quinta tarjeta tiene que estar visible
+    // Primera tarjeta oculta en este momento (la quinta por debajo de xl, la séptima desde xl):
+    // se lee del estilo calculado antes de desplegar
+    const items = Array.from(listRef.current?.children ?? [])
+    const firstHidden = items.find((item) => getComputedStyle(item).display === 'none')
+    // Se pinta antes de mover el foco: el título tiene que estar visible
     flushSync(() => setIsExpanded(true))
-    listRef.current?.children[COLLAPSED_COUNT]?.querySelector<HTMLElement>('h2')?.focus()
+    firstHidden?.querySelector<HTMLElement>('h2')?.focus()
   }
 
   return (
@@ -32,7 +44,7 @@ function ProjectGrid({ results }: { results: Project[] }) {
         {results.map((project, index) => (
           <li
             key={project.slug}
-            className={!isExpanded && index >= COLLAPSED_COUNT ? 'hidden xl:block' : undefined}
+            className={isExpanded ? undefined : getCollapsedClasses(index)}
           >
             <ProjectCard
               name={project.name}
@@ -50,7 +62,8 @@ function ProjectGrid({ results }: { results: Project[] }) {
         <button
           type="button"
           onClick={handleSeeMore}
-          className="relative self-center rounded-lg border border-default bg-surface px-5.75 py-3.75 text-body-medium-18 text-default hover:bg-surface-raised xl:hidden"
+          // Desde xl solo existe si quedan tarjetas ocultas en ese ancho
+          className={`relative self-center rounded-lg border border-default bg-surface px-5.75 py-3.75 text-body-medium-18 text-default hover:bg-surface-raised ${results.length > COLLAPSED_COUNT_XL ? '' : 'xl:hidden'}`}
         >
           See More
         </button>
@@ -124,7 +137,7 @@ export function ProjectResults({ ref, announcedSearch }: ProjectResultsProps) {
 
       {count === 0 ? (
         <Link
-          to="/projects"
+          to="/projects#search"
           className="relative self-start rounded-lg border border-default bg-surface px-5.75 py-3.75 text-body-medium-16 text-default hover:bg-surface-raised"
         >
           Clear filters
