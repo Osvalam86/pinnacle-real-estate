@@ -5,6 +5,7 @@ import { newsArticles, type NewsArticle } from '../data/news.ts'
 import { Button } from './Button.tsx'
 import { Carousel } from './Carousel.tsx'
 import { CalendarIcon } from './icons.tsx'
+import { SectionTitle } from './SectionTitle.tsx'
 
 function NewsCard({ tag, title, publishedAt, dateLabel, image }: NewsArticle) {
   const titleId = useId()
@@ -70,22 +71,16 @@ export function LatestNewsSection() {
     >
       <div className="flex flex-col items-start gap-8 md:gap-10 xl:flex-row xl:items-end xl:justify-between">
         <div className="flex flex-col gap-4 xl:w-199 xl:gap-6">
-          <div className="flex items-center gap-4 md:gap-6">
-            <img
-              src={titleIconUrl}
-              alt=""
-              width="38"
-              height="38"
-              className="size-6 shrink-0 md:size-9.5"
-            />
-            <h2
-              id={headingId}
-              tabIndex={-1}
-              className="font-heading text-extra-30 text-default focus:outline-hidden md:text-h5 xl:text-h4"
-            >
-              Latest News
-            </h2>
-          </div>
+          <SectionTitle
+            as="h2"
+            id={headingId}
+            iconSrc={titleIconUrl}
+            className="gap-4 md:gap-6"
+            tabIndex={-1}
+            headingClassName="focus:outline-hidden"
+          >
+            Latest News
+          </SectionTitle>
           <p className="text-body-regular-16 text-muted md:text-body-regular-18">
             We've built a reputation for delivering exceptional results and exceeding our clients'
             expectations. From luxurious residential homes to state-of-the-art commercial properties,

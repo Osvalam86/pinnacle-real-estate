@@ -4,6 +4,7 @@ import projects from '../data/projects.json'
 import { Button } from './Button.tsx'
 import { Carousel } from './Carousel.tsx'
 import { ProjectCard } from './ProjectCard.tsx'
+import { SectionTitle } from './SectionTitle.tsx'
 
 type Project = (typeof projects)[number]
 
@@ -41,18 +42,9 @@ export function FeaturedProjectsSection() {
     >
       <div className="flex flex-col items-start gap-6 md:gap-10 xl:flex-row xl:items-end xl:justify-between">
         <div className="flex flex-col gap-4 xl:w-199 xl:gap-6">
-          <div className="flex items-center gap-4 md:gap-6">
-            <img
-              src={titleIconUrl}
-              alt=""
-              width="38"
-              height="38"
-              className="size-6 shrink-0 md:size-9.5"
-            />
-            <h2 id={headingId} className="font-heading text-extra-30 text-default md:text-h5 xl:text-h4">
-              Featured Projects
-            </h2>
-          </div>
+          <SectionTitle as="h2" id={headingId} iconSrc={titleIconUrl} className="gap-4 md:gap-6">
+            Featured Projects
+          </SectionTitle>
           <p className="text-body-regular-16 text-muted md:text-body-regular-18">
             We've built a reputation for delivering exceptional results and exceeding our clients'
             expectations. From luxurious residential homes to state-of-the-art commercial properties,

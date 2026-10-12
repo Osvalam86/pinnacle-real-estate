@@ -6,6 +6,7 @@ import projects from '../data/projects.json'
 import { matchesSearch, readSearchValues } from '../data/projectFilters.ts'
 import { Button } from './Button.tsx'
 import { ProjectCard } from './ProjectCard.tsx'
+import { SectionTitle } from './SectionTitle.tsx'
 
 type Project = (typeof projects)[number]
 
@@ -96,22 +97,15 @@ export function ProjectResults({ ref, announcedSearch }: ProjectResultsProps) {
       className="mx-auto flex max-w-page flex-col gap-10.5 px-4 py-22 md:px-10 md:py-26 xl:px-16 xl:py-32"
     >
       <div className="flex flex-col gap-8 xl:w-199">
-        <div className="flex items-center gap-2 md:gap-6">
-          <img
-            src={titleIconUrl}
-            alt=""
-            width="38"
-            height="38"
-            className="size-6 shrink-0 md:size-9.5"
-          />
-          <h1
-            id={headingId}
-            data-route-focus="main"
-            className="font-heading text-extra-30 text-default md:text-h5 xl:text-h4"
-          >
-            Our Exceptional Projects
-          </h1>
-        </div>
+        <SectionTitle
+          as="h1"
+          id={headingId}
+          iconSrc={titleIconUrl}
+          className="gap-2 md:gap-6"
+          data-route-focus="main"
+        >
+          Our Exceptional Projects
+        </SectionTitle>
         <p className={PARAGRAPH_CLASSES}>
           Explore our portfolio to see the breadth and quality of our work, and get inspired to start
           your own dream project.
