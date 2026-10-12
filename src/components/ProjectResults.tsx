@@ -91,58 +91,60 @@ export function ProjectResults({ ref, announcedSearch }: ProjectResultsProps) {
   const count = results.length
 
   return (
-    <section
-      ref={ref}
-      aria-labelledby={headingId}
-      className="mx-auto flex max-w-page flex-col gap-10.5 px-4 py-22 md:px-10 md:py-26 xl:px-16 xl:py-32"
-    >
-      <div className="flex flex-col gap-8 xl:w-199">
-        <SectionTitle
-          as="h1"
-          id={headingId}
-          iconSrc={titleIconUrl}
-          className="gap-2 md:gap-6"
-          data-route-focus="main"
-        >
-          Our Exceptional Projects
-        </SectionTitle>
-        <p className={PARAGRAPH_CLASSES}>
-          Explore our portfolio to see the breadth and quality of our work, and get inspired to start
-          your own dream project.
-        </p>
-      </div>
+    <div className="bg-page">
+      <section
+        ref={ref}
+        aria-labelledby={headingId}
+        className="mx-auto flex max-w-page flex-col gap-10.5 px-4 py-22 md:px-10 md:py-26 xl:px-16 xl:py-32"
+      >
+        <div className="flex flex-col gap-8 xl:w-199">
+          <SectionTitle
+            as="h1"
+            id={headingId}
+            iconSrc={titleIconUrl}
+            className="gap-2 md:gap-6"
+            data-route-focus="main"
+          >
+            Our Exceptional Projects
+          </SectionTitle>
+          <p className={PARAGRAPH_CLASSES}>
+            Explore our portfolio to see the breadth and quality of our work, and get inspired to start
+            your own dream project.
+          </p>
+        </div>
 
-      {/* Un solo aviso, siempre en el DOM y siempre el mismo nodo. Sin resultados, el aviso es el
-          mensaje visible; con resultados va fuera del flujo (sr-only, sin gap) y el número solo se
-          anuncia tras una búsqueda del formulario */}
-      <div role="status" className={count === 0 ? 'flex flex-col gap-2' : 'sr-only'}>
+        {/* Un solo aviso, siempre en el DOM y siempre el mismo nodo. Sin resultados, el aviso es el
+            mensaje visible; con resultados va fuera del flujo (sr-only, sin gap) y el número solo se
+            anuncia tras una búsqueda del formulario */}
+        <div role="status" className={count === 0 ? 'flex flex-col gap-2' : 'sr-only'}>
+          {count === 0 ? (
+            <>
+              <p className="font-heading text-body-medium-24 text-default">
+                No projects match your search.
+              </p>
+              <p className={PARAGRAPH_CLASSES}>Try a different name or remove a filter.</p>
+            </>
+          ) : (
+            // Atrás y adelante no anuncian aunque la URL coincida con la última búsqueda
+            announcedSearch === search &&
+            navigationType !== 'POP' &&
+            (count === 1 ? '1 project found' : `${count} projects found`)
+          )}
+        </div>
+
         {count === 0 ? (
-          <>
-            <p className="font-heading text-body-medium-24 text-default">
-              No projects match your search.
-            </p>
-            <p className={PARAGRAPH_CLASSES}>Try a different name or remove a filter.</p>
-          </>
+          <Button
+            to="/projects#search"
+            variant="tertiary"
+            className="relative self-start text-body-medium-16"
+          >
+            Clear filters
+          </Button>
         ) : (
-          // Atrás y adelante no anuncian aunque la URL coincida con la última búsqueda
-          announcedSearch === search &&
-          navigationType !== 'POP' &&
-          (count === 1 ? '1 project found' : `${count} projects found`)
+          // La clave pliega la lista de nuevo con cada cambio de parámetros
+          <ProjectGrid key={search} results={results} />
         )}
-      </div>
-
-      {count === 0 ? (
-        <Button
-          to="/projects#search"
-          variant="tertiary"
-          className="relative self-start text-body-medium-16"
-        >
-          Clear filters
-        </Button>
-      ) : (
-        // La clave pliega la lista de nuevo con cada cambio de parámetros
-        <ProjectGrid key={search} results={results} />
-      )}
-    </section>
+      </section>
+    </div>
   )
 }

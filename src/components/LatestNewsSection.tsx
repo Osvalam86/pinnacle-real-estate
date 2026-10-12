@@ -64,48 +64,50 @@ export function LatestNewsSection() {
   const headingId = useId()
 
   return (
-    <section
-      id="news"
-      aria-labelledby={headingId}
-      className="mx-auto flex max-w-page flex-col gap-16 px-4 py-16 md:px-10 md:py-20 xl:gap-18 xl:px-16 xl:py-22"
-    >
-      <div className="flex flex-col items-start gap-8 md:gap-10 xl:flex-row xl:items-end xl:justify-between">
-        <div className="flex flex-col gap-4 xl:w-199 xl:gap-6">
-          <SectionTitle
-            as="h2"
-            id={headingId}
-            iconSrc={titleIconUrl}
-            className="gap-4 md:gap-6"
-            tabIndex={-1}
-            headingClassName="focus:outline-hidden"
+    <div className="bg-page">
+      <section
+        id="news"
+        aria-labelledby={headingId}
+        className="mx-auto flex max-w-page flex-col gap-16 px-4 py-16 md:px-10 md:py-20 xl:gap-18 xl:px-16 xl:py-22"
+      >
+        <div className="flex flex-col items-start gap-8 md:gap-10 xl:flex-row xl:items-end xl:justify-between">
+          <div className="flex flex-col gap-4 xl:w-199 xl:gap-6">
+            <SectionTitle
+              as="h2"
+              id={headingId}
+              iconSrc={titleIconUrl}
+              className="gap-4 md:gap-6"
+              tabIndex={-1}
+              headingClassName="focus:outline-hidden"
+            >
+              Latest News
+            </SectionTitle>
+            <p className="text-body-regular-16 text-muted md:text-body-regular-18">
+              We've built a reputation for delivering exceptional results and exceeding our clients'
+              expectations. From luxurious residential homes to state-of-the-art commercial properties,
+              our team of experts is dedicated to bringing your vision to life.
+            </p>
+          </div>
+          {/* Alto fijo de 61: el texto va recortado a la altura de mayúscula donde text-box lo admite */}
+          <Button
+            to="/case-study"
+            variant="tertiary"
+            className="flex h-15.25 items-center justify-center text-body-medium-18"
           >
-            Latest News
-          </SectionTitle>
-          <p className="text-body-regular-16 text-muted md:text-body-regular-18">
-            We've built a reputation for delivering exceptional results and exceeding our clients'
-            expectations. From luxurious residential homes to state-of-the-art commercial properties,
-            our team of experts is dedicated to bringing your vision to life.
-          </p>
+            <span className="[text-box:trim-both_cap_alphabetic]">View all blog post</span>
+          </Button>
         </div>
-        {/* Alto fijo de 61: el texto va recortado a la altura de mayúscula donde text-box lo admite */}
-        <Button
-          to="/case-study"
-          variant="tertiary"
-          className="flex h-15.25 items-center justify-center text-body-medium-18"
-        >
-          <span className="[text-box:trim-both_cap_alphabetic]">View all blog post</span>
-        </Button>
-      </div>
 
-      <Carousel
-        items={newsArticles}
-        getKey={getArticleKey}
-        renderItem={renderArticle}
-        itemClassName="w-82 md:w-[38.09375rem] xl:w-[calc((100%-1rem)/2)]"
-        previousLabel="Previous article"
-        nextLabel="Next article"
-        getStatusText={getStatusText}
-      />
-    </section>
+        <Carousel
+          items={newsArticles}
+          getKey={getArticleKey}
+          renderItem={renderArticle}
+          itemClassName="w-82 md:w-[38.09375rem] xl:w-[calc((100%-1rem)/2)]"
+          previousLabel="Previous article"
+          nextLabel="Next article"
+          getStatusText={getStatusText}
+        />
+      </section>
+    </div>
   )
 }

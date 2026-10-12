@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Outlet } from 'react-router'
+import { Outlet, useLocation } from 'react-router'
+import { SiteBackground } from '../components/SiteBackground.tsx'
 import { SiteFooter } from '../components/SiteFooter.tsx'
 import { SiteHeader } from '../components/SiteHeader.tsx'
 import { RouteFocus } from '../routing/RouteFocus.tsx'
@@ -11,8 +12,13 @@ function RootLayout() {
   // Con el menú abierto, todo lo que no es la barra y su panel queda inerte
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const { pathname } = useLocation()
+  const backgroundVariant = pathname === '/' ? 'home' : pathname === '/contact' ? 'contact' : 'base'
+
   return (
-    <>
+    // overflow-clip recorta el fondo sin alargar la página ni crear desplazamiento
+    <div className="relative isolate overflow-clip">
+      <SiteBackground variant={backgroundVariant} />
       <RouteFocus />
       <a href="#main-content" inert={isMenuOpen} className={SKIP_LINK_CLASSES}>
         Skip to main content
@@ -28,7 +34,7 @@ function RootLayout() {
       </main>
 
       <SiteFooter inert={isMenuOpen} />
-    </>
+    </div>
   )
 }
 

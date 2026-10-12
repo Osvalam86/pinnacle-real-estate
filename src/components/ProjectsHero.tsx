@@ -4,6 +4,7 @@ import projects from '../data/projects.json'
 import { projectFilters, readSearchValues, type ProjectFilter } from '../data/projectFilters.ts'
 import { SEARCH_FORM_STATE } from '../routing/navigationState.ts'
 import { Button } from './Button.tsx'
+import { HeroFade } from './HeroFade.tsx'
 import { BillIcon, BoxIcon, ChevronIcon, FlagIcon } from './icons.tsx'
 
 // Posición de cada pin respecto al mapa: izquierda en % del ancho del mapa y arriba en px.
@@ -180,33 +181,36 @@ function FilterSelect({ filter, value, onChange }: FilterSelectProps) {
 
 export function ProjectsHero({ onSearch }: SearchFormProps) {
   return (
-    <div className="mx-auto max-w-page px-4 pt-14 md:px-10 md:pt-26 xl:px-16">
-      <div className="relative">
-        <img
-          src="/images/projects/map.webp"
-          alt=""
-          width="1690"
-          height="1267"
-          className="h-114.25 w-full rounded-2xl object-cover md:h-144.75 xl:h-168.75"
-        />
-        <ul aria-label="Projects on the map">
-          {pinnedProjects.map((project) => (
-            <li key={project.slug} className={`absolute ${PIN_POSITIONS[project.slug]}`}>
-              {/* Punto de 12 px: 4 dentro de la pastilla y 8 fuera; -bottom cuenta desde dentro del borde */}
-              <Link
-                to={`/projects/${project.slug}`}
-                className="relative block whitespace-nowrap rounded-lg border border-gray-6 bg-gray-5/45 p-3.75 text-body-bold-11 text-gray-13 decoration-1 backdrop-blur-md after:absolute after:-bottom-2.25 after:left-1/2 after:size-3 after:-translate-x-1/2 after:rounded-full after:bg-gray-13 after:inset-shadow-pin-dot hover:underline focus-visible:ring-2 focus-visible:ring-gray-13 md:px-5.75 md:text-body-bold-14 xl:text-body-bold-16"
-              >
-                {project.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-      {/* -mt-12: en Figma el hero es un auto layout con separación de -48 entre el mapa y el
-          buscador, y gap no admite negativos. relative lo pinta por encima del mapa */}
-      <div className="relative -mt-12 px-4 md:px-8 xl:px-16">
-        <SearchForm onSearch={onSearch} />
+    <div className="relative">
+      <HeroFade className="h-233.25 xl:h-222.25" />
+      <div className="relative mx-auto max-w-page px-4 pt-14 md:px-10 md:pt-26 xl:px-16">
+        <div className="relative">
+          <img
+            src="/images/projects/map.webp"
+            alt=""
+            width="1690"
+            height="1267"
+            className="h-114.25 w-full rounded-2xl object-cover md:h-144.75 xl:h-168.75"
+          />
+          <ul aria-label="Projects on the map">
+            {pinnedProjects.map((project) => (
+              <li key={project.slug} className={`absolute ${PIN_POSITIONS[project.slug]}`}>
+                {/* Punto de 12 px: 4 dentro de la pastilla y 8 fuera; -bottom cuenta desde dentro del borde */}
+                <Link
+                  to={`/projects/${project.slug}`}
+                  className="relative block whitespace-nowrap rounded-lg border border-gray-6 bg-gray-5/45 p-3.75 text-body-bold-11 text-gray-13 decoration-1 backdrop-blur-md after:absolute after:-bottom-2.25 after:left-1/2 after:size-3 after:-translate-x-1/2 after:rounded-full after:bg-gray-13 after:inset-shadow-pin-dot hover:underline focus-visible:ring-2 focus-visible:ring-gray-13 md:px-5.75 md:text-body-bold-14 xl:text-body-bold-16"
+                >
+                  {project.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* -mt-12: en Figma el hero es un auto layout con separación de -48 entre el mapa y el
+            buscador, y gap no admite negativos. relative lo pinta por encima del mapa */}
+        <div className="relative -mt-12 px-4 md:px-8 xl:px-16">
+          <SearchForm onSearch={onSearch} />
+        </div>
       </div>
     </div>
   )
