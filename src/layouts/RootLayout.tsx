@@ -16,8 +16,9 @@ function RootLayout() {
   const backgroundVariant = pathname === '/' ? 'home' : pathname === '/contact' ? 'contact' : 'base'
 
   return (
-    // overflow-clip recorta el fondo sin alargar la página ni crear desplazamiento
-    <div className="relative isolate overflow-clip">
+    // overflow-clip recorta el fondo sin alargar la página ni crear desplazamiento.
+    // min-h-dvh: en páginas más bajas que la ventana, <main> crece y el footer queda abajo
+    <div className="relative isolate flex min-h-dvh flex-col overflow-clip">
       <SiteBackground variant={backgroundVariant} />
       <RouteFocus />
       <a href="#main-content" inert={isMenuOpen} className={SKIP_LINK_CLASSES}>
@@ -29,7 +30,7 @@ function RootLayout() {
 
       <SiteHeader isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} />
 
-      <main id="main-content" tabIndex={-1} inert={isMenuOpen} className="focus:outline-hidden">
+      <main id="main-content" tabIndex={-1} inert={isMenuOpen} className="grow focus:outline-hidden">
         <Outlet />
       </main>
 
