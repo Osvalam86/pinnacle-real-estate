@@ -171,6 +171,10 @@ function TextField({
         onChange={onChange}
         aria-invalid={errorId ? 'true' : undefined}
         aria-describedby={errorId}
+        // Firefox conserva el desplazamiento al salir y no muestra el inicio con puntos suspensivos
+        onBlur={(event) => {
+          event.currentTarget.scrollLeft = 0
+        }}
         className={INPUT_CLASSES}
         {...inputProps}
       />
