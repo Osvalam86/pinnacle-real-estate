@@ -1,7 +1,7 @@
 import { useId } from 'react'
-import { Link } from 'react-router'
 import titleIconUrl from '../assets/featured-title-icon.svg'
 import projects from '../data/projects.json'
+import { Button } from './Button.tsx'
 import { Carousel } from './Carousel.tsx'
 import { ProjectCard } from './ProjectCard.tsx'
 
@@ -59,12 +59,9 @@ export function FeaturedProjectsSection() {
             our team of experts is dedicated to bringing your vision to life.
           </p>
         </div>
-        <Link
-          to="/projects"
-          className="relative rounded-lg border border-default bg-surface px-5.75 py-3.75 text-body-medium-16 text-default hover:bg-surface-raised"
-        >
+        <Button to="/projects" variant="tertiary" className="relative text-body-medium-16">
           View all Projects
-        </Link>
+        </Button>
       </div>
 
       {/* Figma fija el contenedor en 704 con contenido de 716: el margen negativo da el mismo alto de sección */}

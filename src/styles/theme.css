@@ -108,6 +108,8 @@
   --outline-color-focus: var(--color-gray-1);
 
   --color-accent: var(--color-orange-13);
+  /* hover del botón naranja; valor de la sombra interior del Primary button en Figma, sin estilo de color propio (añadido, aprobado por Osvaldo) */
+  --color-accent-hover: #fe6d2f;
   --color-feedback-danger: var(--color-rose-400);
 
   /* ── Semánticos · familia por defecto ───────────────── */

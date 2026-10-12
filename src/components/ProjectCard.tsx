@@ -1,5 +1,5 @@
 import { useId } from 'react'
-import { Link } from 'react-router'
+import { Button } from './Button.tsx'
 import { LocationIcon } from './icons.tsx'
 
 type HeadingLevel = 'h2' | 'h3' | 'h4'
@@ -71,14 +71,15 @@ export function ProjectCard({
             {tag}
           </p>
         </div>
-        <Link
+        <Button
           to={`/projects/${slug}`}
+          variant="primary"
           id={linkId}
           aria-labelledby={`${linkId} ${titleId}`}
-          className="rounded-lg bg-accent px-6 py-4 text-center text-body-bold-16 text-inverse inset-shadow-button-accent"
+          className="text-body-bold-16"
         >
           View Property
-        </Link>
+        </Button>
       </div>
     </div>
   )

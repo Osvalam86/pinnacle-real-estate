@@ -522,7 +522,7 @@ export function ContactFormSection() {
 
             <button
               type="submit"
-              className="flex h-14.5 w-full items-center justify-center gap-2.5 rounded-xl bg-accent px-6 pt-5.5 pb-6 text-body-medium-18 text-inverse inset-shadow-button-accent md:w-39"
+              className="flex h-14.5 w-full items-center justify-center gap-2.5 rounded-xl bg-accent px-6 pt-5.5 pb-6 text-body-medium-18 text-inverse inset-shadow-button-accent hover:bg-accent-hover md:w-39"
             >
               Send
               <SendIcon />

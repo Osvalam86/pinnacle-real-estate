@@ -2,6 +2,7 @@ import { useId } from 'react'
 import { Link } from 'react-router'
 import titleIconUrl from '../assets/news-title-icon.svg'
 import { newsArticles, type NewsArticle } from '../data/news.ts'
+import { Button } from './Button.tsx'
 import { Carousel } from './Carousel.tsx'
 import { CalendarIcon } from './icons.tsx'
 
@@ -92,12 +93,13 @@ export function LatestNewsSection() {
           </p>
         </div>
         {/* Alto fijo de 61: el texto va recortado a la altura de mayúscula donde text-box lo admite */}
-        <Link
+        <Button
           to="/case-study"
-          className="flex h-15.25 items-center justify-center rounded-lg border border-default bg-surface px-5.75 text-body-medium-18 text-default hover:bg-surface-raised"
+          variant="tertiary"
+          className="flex h-15.25 items-center justify-center text-body-medium-18"
         >
           <span className="[text-box:trim-both_cap_alphabetic]">View all blog post</span>
-        </Link>
+        </Button>
       </div>
 
       <Carousel

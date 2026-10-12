@@ -1,9 +1,10 @@
 import { useId, useRef, useState, type Ref } from 'react'
 import { flushSync } from 'react-dom'
-import { Link, useLocation, useNavigationType, useSearchParams } from 'react-router'
+import { useLocation, useNavigationType, useSearchParams } from 'react-router'
 import titleIconUrl from '../assets/featured-title-icon.svg'
 import projects from '../data/projects.json'
 import { matchesSearch, readSearchValues } from '../data/projectFilters.ts'
+import { Button } from './Button.tsx'
 import { ProjectCard } from './ProjectCard.tsx'
 
 type Project = (typeof projects)[number]
@@ -59,14 +60,15 @@ function ProjectGrid({ results }: { results: Project[] }) {
         ))}
       </ul>
       {!isExpanded && results.length > COLLAPSED_COUNT && (
-        <button
+        <Button
           type="button"
+          variant="tertiary"
           onClick={handleSeeMore}
           // Desde xl solo existe si quedan tarjetas ocultas en ese ancho
-          className={`relative self-center rounded-lg border border-default bg-surface px-5.75 py-3.75 text-body-medium-18 text-default hover:bg-surface-raised ${results.length > COLLAPSED_COUNT_XL ? '' : 'xl:hidden'}`}
+          className={`relative self-center text-body-medium-18 ${results.length > COLLAPSED_COUNT_XL ? '' : 'xl:hidden'}`}
         >
           See More
-        </button>
+        </Button>
       )}
     </>
   )
@@ -136,12 +138,13 @@ export function ProjectResults({ ref, announcedSearch }: ProjectResultsProps) {
       </div>
 
       {count === 0 ? (
-        <Link
+        <Button
           to="/projects#search"
-          className="relative self-start rounded-lg border border-default bg-surface px-5.75 py-3.75 text-body-medium-16 text-default hover:bg-surface-raised"
+          variant="tertiary"
+          className="relative self-start text-body-medium-16"
         >
           Clear filters
-        </Link>
+        </Button>
       ) : (
         // La clave pliega la lista de nuevo con cada cambio de parámetros
         <ProjectGrid key={search} results={results} />

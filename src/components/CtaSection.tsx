@@ -1,10 +1,10 @@
 import { useId } from 'react'
-import { Link } from 'react-router'
 import meshLeftUrl from '../assets/cta-mesh-left.svg'
 import meshLeftMobileUrl from '../assets/cta-mesh-left-mobile.svg'
 import meshRightUrl from '../assets/cta-mesh-right.svg'
 import meshRightMobileUrl from '../assets/cta-mesh-right-mobile.svg'
 import titleShapeUrl from '../assets/cta-title-shape.svg'
+import { Button } from './Button.tsx'
 
 // Mallas a su tamaño propio; posiciones calculadas aparte porque los archivos se reencuadraron
 const MESH_CLASSES = 'pointer-events-none absolute max-w-none'
@@ -66,12 +66,9 @@ export function CtaSection() {
           Something Extraordinary Together
         </h2>
 
-        <Link
-          to="/projects"
-          className="relative rounded-lg border border-default bg-surface px-5.75 py-3.75 text-body-medium-16 text-default hover:bg-surface-raised"
-        >
+        <Button to="/projects" variant="tertiary" className="relative text-body-medium-16">
           View our projects
-        </Link>
+        </Button>
       </div>
     </section>
   )

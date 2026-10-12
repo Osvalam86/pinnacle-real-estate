@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate, useSearchParams } from 'react-router'
 import projects from '../data/projects.json'
 import { projectFilters, readSearchValues, type ProjectFilter } from '../data/projectFilters.ts'
 import { SEARCH_FORM_STATE } from '../routing/navigationState.ts'
+import { Button } from './Button.tsx'
 import { BillIcon, BoxIcon, ChevronIcon, FlagIcon } from './icons.tsx'
 
 // Posición de cada pin respecto al mapa: izquierda en % del ancho del mapa y arriba en px.
@@ -115,12 +116,13 @@ function SearchForm({ onSearch }: SearchFormProps) {
         ))}
       </div>
 
-      <button
+      <Button
         type="submit"
-        className="rounded-lg bg-accent px-6 py-4 text-body-medium-16 text-inverse inset-shadow-button-accent md:text-body-medium-20 xl:shrink-0"
+        variant="primary"
+        className="text-body-medium-16 md:text-body-medium-20 xl:shrink-0"
       >
         Find a property
-      </button>
+      </Button>
     </form>
   )
 }
