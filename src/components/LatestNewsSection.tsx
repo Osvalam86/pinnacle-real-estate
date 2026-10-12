@@ -14,8 +14,8 @@ function NewsCard({ tag, title, publishedAt, dateLabel, image }: NewsArticle) {
       <img
         src={image}
         alt=""
-        width="379"
-        height="300"
+        width="1274"
+        height="1274"
         loading="lazy"
         className="h-75 w-full rounded-2xl object-cover"
       />

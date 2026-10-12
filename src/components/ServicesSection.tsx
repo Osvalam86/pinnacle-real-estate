@@ -27,8 +27,8 @@ function ServiceCard({ title, description }: Service) {
       <img
         src="/images/shared/card-default.webp"
         alt=""
-        width="379"
-        height="300"
+        width="1274"
+        height="1274"
         decoding="sync"
         className="h-75 w-full rounded-2xl object-cover"
       />
