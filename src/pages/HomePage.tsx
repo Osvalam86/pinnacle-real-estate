@@ -4,6 +4,7 @@ import { FeaturedProjectsSection } from '../components/FeaturedProjectsSection.t
 import { HomeHero } from '../components/HomeHero.tsx'
 import { LatestNewsSection } from '../components/LatestNewsSection.tsx'
 import { ServicesSection } from '../components/ServicesSection.tsx'
+import { TestimonialsSection } from '../components/TestimonialsSection.tsx'
 import { usePageTitle } from '../routing/usePageTitle.ts'
 
 function HomePage() {
@@ -20,17 +21,9 @@ function HomePage() {
       </div>
       <FeaturedProjectsSection />
       <ServicesSection />
-      {/* Secciones temporales para probar las anclas: las sustituye el contenido real */}
-      <section
-        id="testimonials"
-        aria-labelledby="testimonials-heading"
-        className="min-h-dvh p-4"
-      >
-        <h2 id="testimonials-heading" tabIndex={-1} className="focus:outline-hidden">
-          Testimonials
-        </h2>
-      </section>
+      <TestimonialsSection />
       <LatestNewsSection />
+      {/* Sección temporal para probar el ancla: la sustituye el contenido real */}
       <section id="faq" aria-labelledby="faq-heading" className="min-h-dvh p-4">
         <h2 id="faq-heading" tabIndex={-1} className="focus:outline-hidden">
           FAQ
