@@ -14,6 +14,44 @@ function focusWithoutScroll(element: HTMLElement | null) {
   element?.focus({ preventScroll: true })
 }
 
+// Valor estimado: cubre el segundo render de las pestañas y la carga de fuentes medidos
+const REANCHOR_WINDOW_MS = 2000
+const USER_INPUT_EVENTS = ['wheel', 'touchstart', 'pointerdown', 'keydown'] as const
+
+// Tras desplazar a un ancla, lo de encima del destino aún puede cambiar de alto: React Aria monta las
+// pestañas de Services en un segundo render y las fuentes pueden cambiar el alto del texto. Mientras
+// dura la ventana, si el destino se mueve se vuelve a desplazar; la primera interacción la cierra
+function keepAnchored(target: HTMLElement) {
+  const anchoredTop = target.getBoundingClientRect().top
+
+  function reanchor() {
+    if (Math.abs(target.getBoundingClientRect().top - anchoredTop) > 1) {
+      target.scrollIntoView({ behavior: 'instant', block: 'start' })
+    }
+  }
+
+  let isActive = true
+  const observer = new ResizeObserver(reanchor)
+  const main = document.getElementById('main-content')
+  if (main) observer.observe(main)
+  document.fonts.addEventListener('loadingdone', reanchor)
+  void document.fonts.ready.then(() => {
+    if (isActive) reanchor()
+  })
+
+  function stop() {
+    isActive = false
+    observer.disconnect()
+    document.fonts.removeEventListener('loadingdone', reanchor)
+    for (const type of USER_INPUT_EVENTS) window.removeEventListener(type, stop)
+    window.clearTimeout(timer)
+  }
+
+  for (const type of USER_INPUT_EVENTS) window.addEventListener(type, stop, { passive: true })
+  const timer = window.setTimeout(stop, REANCHOR_WINDOW_MS)
+  return stop
+}
+
 // Desplazamiento y foco después de cada navegación, salvo las del buscador y atrás/adelante entre parámetros
 export function RouteFocus() {
   const { pathname, search, hash, key, state } = useLocation()
@@ -53,7 +91,8 @@ export function RouteFocus() {
           ? target
           : target.querySelector<HTMLElement>('h1, h2, h3, h4, h5, h6'),
       )
-      return
+      // La limpieza del efecto cierra la ventana si llega otra navegación antes
+      return keepAnchored(target)
     }
 
     // Un ancla cuyo id no existe, o un enlace a la ruta actual sin ancla, se trata como un cambio de ruta
