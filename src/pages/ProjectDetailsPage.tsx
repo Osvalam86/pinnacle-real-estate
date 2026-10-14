@@ -1,5 +1,6 @@
 import { useParams } from 'react-router'
 import { CtaSection } from '../components/CtaSection.tsx'
+import { ProjectDetailsSection } from '../components/ProjectDetailsSection.tsx'
 import { ProjectHero } from '../components/ProjectHero.tsx'
 import projects from '../data/projects.json'
 import { usePageTitle } from '../routing/usePageTitle.ts'
@@ -30,7 +31,7 @@ function ProjectDetails({ project }: { project: Project }) {
         address={project.address}
         image={project.image}
       />
-
+      <ProjectDetailsSection slug={project.slug} article={project.article} />
       <CtaSection />
     </>
   )

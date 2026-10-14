@@ -152,6 +152,10 @@
   --text-body-medium-24: var(--text-2xl);
   --text-body-medium-24--line-height: var(--leading-tight);
   --text-body-medium-24--font-weight: var(--font-weight-medium);
+  /* Share a 360: Clash Display Medium 20/120 %, sin estilo en Figma */
+  --text-heading-medium-20: var(--text-xl);
+  --text-heading-medium-20--line-height: var(--leading-tight);
+  --text-heading-medium-20--font-weight: var(--font-weight-medium);
 
   /* ── Estilos de texto · Satoshi Bold ────────────────── */
   /* Body/Bold/24px · 24/150 % */
