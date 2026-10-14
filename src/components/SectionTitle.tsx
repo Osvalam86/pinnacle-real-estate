@@ -7,6 +7,8 @@ type SectionTitleProps = {
   iconSrc: string
   /** Separación entre icono y encabezado */
   className?: string
+  /** Alineación vertical de icono y encabezado */
+  alignClassName?: string
   /** Clases añadidas al encabezado */
   headingClassName?: string
   tabIndex?: number
@@ -19,13 +21,14 @@ export function SectionTitle({
   id,
   iconSrc,
   className,
+  alignClassName = 'items-center',
   headingClassName,
   tabIndex,
   'data-route-focus': routeFocus,
   children,
 }: SectionTitleProps) {
   return (
-    <div className={`flex items-center ${className ?? ''}`}>
+    <div className={`flex ${alignClassName} ${className ?? ''}`}>
       <img src={iconSrc} alt="" width="38" height="38" className="size-6 shrink-0 md:size-9.5" />
       <Heading
         id={id}

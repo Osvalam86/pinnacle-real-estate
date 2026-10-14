@@ -1,5 +1,6 @@
 import { AboutSection } from '../components/AboutSection.tsx'
 import { CtaSection } from '../components/CtaSection.tsx'
+import { FaqSection } from '../components/FaqSection.tsx'
 import { FeaturedProjectsSection } from '../components/FeaturedProjectsSection.tsx'
 import { HomeHero } from '../components/HomeHero.tsx'
 import { LatestNewsSection } from '../components/LatestNewsSection.tsx'
@@ -23,13 +24,7 @@ function HomePage() {
       <ServicesSection />
       <TestimonialsSection />
       <LatestNewsSection />
-      {/* Sección temporal para probar el ancla: la sustituye el contenido real */}
-      <section id="faq" aria-labelledby="faq-heading" className="min-h-dvh p-4">
-        <h2 id="faq-heading" tabIndex={-1} className="focus:outline-hidden">
-          FAQ
-        </h2>
-      </section>
-
+      <FaqSection />
       <CtaSection />
     </>
   )
