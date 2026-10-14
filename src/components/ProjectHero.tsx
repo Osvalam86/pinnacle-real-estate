@@ -1,8 +1,8 @@
 import { useId } from 'react'
-import { Link } from 'react-router'
 import { IMAGE_SIZES } from '../data/projectImages.ts'
+import { BackToProjectsLink } from './BackToProjectsLink.tsx'
 import { HeroFade } from './HeroFade.tsx'
-import { FlagIcon, StrokeArrowIcon } from './icons.tsx'
+import { FlagIcon } from './icons.tsx'
 
 type ProjectHeroProps = {
   name: string
@@ -21,14 +21,7 @@ export function ProjectHero({ name, summary, type, address, image }: ProjectHero
       <HeroFade className="h-260 md:h-287.5 xl:h-326" />
       {/* mx-auto: centra la caja de 1440 */}
       <div className="relative mx-auto flex max-w-page flex-col gap-8 px-4 pt-24 md:gap-12.5 md:px-10 md:pt-28 xl:px-16 xl:pt-40">
-        {/* Borde real de 1 px: el relleno de Figma (16) se reduce en 1 */}
-        <Link
-          to="/projects"
-          className="flex items-center gap-2.5 self-start rounded-lg border border-default bg-surface p-3.75 text-body-medium-12 text-muted hover:bg-surface-raised md:gap-2 md:text-body-medium-14"
-        >
-          <StrokeArrowIcon className="size-4.5 shrink-0 text-subtle md:size-5" />
-          Back to all Projects
-        </Link>
+        <BackToProjectsLink className="self-start md:gap-2" />
 
         <div className="flex flex-col gap-10 xl:flex-row xl:items-end xl:gap-2">
           <div className="flex flex-col gap-8 xl:w-191.25 xl:shrink-0">

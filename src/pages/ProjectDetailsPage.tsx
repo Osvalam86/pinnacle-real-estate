@@ -2,6 +2,7 @@ import { useParams } from 'react-router'
 import { CtaSection } from '../components/CtaSection.tsx'
 import { ProjectDetailsSection } from '../components/ProjectDetailsSection.tsx'
 import { ProjectHero } from '../components/ProjectHero.tsx'
+import { RelatedProjectsSection } from '../components/RelatedProjectsSection.tsx'
 import projects from '../data/projects.json'
 import { usePageTitle } from '../routing/usePageTitle.ts'
 import NotFoundPage from './NotFoundPage.tsx'
@@ -15,7 +16,8 @@ function ProjectDetailsPage() {
   // Un slug desconocido pinta el 404 en su sitio, sin redirigir
   if (!project) return <NotFoundPage />
 
-  return <ProjectDetails project={project} />
+  // key: cada proyecto se monta de cero al pasar de un detalle a otro (sin avisos ni temporizadores del anterior)
+  return <ProjectDetails key={project.slug} project={project} />
 }
 
 // Componente aparte para que el hook del título solo se ejecute con un proyecto que existe
@@ -34,6 +36,7 @@ function ProjectDetails({ project }: { project: Project }) {
         image={project.image}
       />
       <ProjectDetailsSection slug={project.slug} article={project.article} title={pageTitle} />
+      <RelatedProjectsSection slug={project.slug} />
       <CtaSection />
     </>
   )

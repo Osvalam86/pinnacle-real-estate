@@ -13,6 +13,8 @@ type ProjectCardProps = {
   image: string
   slug: string
   headingLevel: HeadingLevel
+  /** Separación entre la imagen y el texto; sustituye al gap-8 por defecto */
+  gapClassName?: string
 }
 
 export function ProjectCard({
@@ -23,13 +25,16 @@ export function ProjectCard({
   image,
   slug,
   headingLevel: Heading,
+  gapClassName = 'gap-8',
 }: ProjectCardProps) {
   const titleId = useId()
   const linkId = useId()
   const size = IMAGE_SIZES[image]
 
   return (
-    <div className="flex flex-col gap-8 rounded-2xl border border-default bg-page p-3.75 md:p-5.75">
+    <div
+      className={`flex flex-col ${gapClassName} rounded-2xl border border-default bg-page p-3.75 md:p-5.75`}
+    >
       <img
         src={image}
         alt=""
