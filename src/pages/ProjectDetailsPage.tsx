@@ -20,7 +20,9 @@ function ProjectDetailsPage() {
 
 // Componente aparte para que el hook del título solo se ejecute con un proyecto que existe
 function ProjectDetails({ project }: { project: Project }) {
-  usePageTitle(`${project.name} – Pinnacle`)
+  // La sección de detalle comparte este mismo título: el efecto de usePageTitle llega tarde a su pintado
+  const pageTitle = `${project.name} – Pinnacle`
+  usePageTitle(pageTitle)
 
   return (
     <>
@@ -31,7 +33,7 @@ function ProjectDetails({ project }: { project: Project }) {
         address={project.address}
         image={project.image}
       />
-      <ProjectDetailsSection slug={project.slug} article={project.article} />
+      <ProjectDetailsSection slug={project.slug} article={project.article} title={pageTitle} />
       <CtaSection />
     </>
   )

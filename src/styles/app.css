@@ -2,6 +2,10 @@
 @import "./theme.css";
 @source "../../index.html";
 
+/* Columna fija de Project Details. 44.0625rem = 705 px = 641 de la columna + 32 arriba + 32 abajo;
+   en rem para que se desactive también si crece la letra */
+@custom-variant sticky-fits (@media (width >= 90rem) and (height >= 44.0625rem));
+
 @layer base {
   /* El sitio solo tiene modo oscuro: controles y barras del navegador en oscuro */
   :root {
