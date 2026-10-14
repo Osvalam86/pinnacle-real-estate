@@ -67,6 +67,38 @@ export function ArrowIcon({ className }: { className?: string }) {
   )
 }
 
+// Trazo sin escalar: mide 1,5 px también cuando se dibuja a 18, como en Figma
+export function StrokeArrowIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      aria-hidden="true"
+      focusable="false"
+      className={className}
+    >
+      <path
+        d="M3.3335 10H16.6668"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        vectorEffect="non-scaling-stroke"
+      />
+      <path
+        d="M7.50013 14.1668C7.50013 14.1668 3.3335 11.0982 3.3335 10.0002C3.33349 8.90216 7.50016 5.8335 7.50016 5.8335"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        vectorEffect="non-scaling-stroke"
+      />
+    </svg>
+  )
+}
+
 // Caja exacta del trazado: Figma la redondeó a 12 de ancho al exportar
 export function LocationIcon({ className }: { className?: string }) {
   return (
