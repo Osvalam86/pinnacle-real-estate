@@ -30,7 +30,7 @@ function RootLayout() {
 
       <SiteHeader isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} />
 
-      <main id="main-content" tabIndex={-1} inert={isMenuOpen} className="grow focus:outline-hidden">
+      <main id="main-content" inert={isMenuOpen} className="grow focus:outline-hidden">
         <Outlet />
       </main>
 

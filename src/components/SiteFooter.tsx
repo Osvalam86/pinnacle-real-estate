@@ -149,7 +149,7 @@ type SiteFooterProps = {
 
 export function SiteFooter({ inert }: SiteFooterProps) {
   return (
-    <footer id="footer" tabIndex={-1} inert={inert} className="focus:outline-hidden">
+    <footer id="footer" inert={inert} className="focus:outline-hidden">
       <div className="bg-page">
         <div className="mx-auto flex max-w-page flex-col gap-20 px-4 py-24 md:px-10 md:py-22 xl:flex-row xl:px-16 xl:py-24">
           <div className="flex flex-col gap-6 xl:w-81.5 xl:shrink-0">

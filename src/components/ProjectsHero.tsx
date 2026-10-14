@@ -85,7 +85,6 @@ function SearchForm({ onSearch }: SearchFormProps) {
       role="search"
       aria-label="Projects"
       id="search"
-      tabIndex={-1}
       onSubmit={handleSubmit}
       className="flex flex-col gap-2 rounded-lg bg-surface p-2 focus:outline-hidden xl:flex-row"
     >

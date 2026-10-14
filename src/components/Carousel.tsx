@@ -101,16 +101,28 @@ export function Carousel<T>({
       scrollToItem(list, targetIndex)
     }
 
+    // Clic en un hueco del carril: sin tabindex durante el clic, el carril no se enfoca y Tab sigue desde ese punto.
+    // Se repone después para que Firefox no lo vuelva tabulable
+    function handlePointerDown(event: PointerEvent) {
+      if (!list) return
+      const target = event.target as Element
+      if (target.closest('a[href], button, input, select, textarea, [tabindex]') !== list) return
+      list.removeAttribute('tabindex')
+      window.setTimeout(() => list.setAttribute('tabindex', '-1'))
+    }
+
     // El observador mide también al empezar, sin anunciar
     const observer = new ResizeObserver(() => measure(false))
     observer.observe(list)
     list.addEventListener('scroll', handleScroll, { passive: true })
     list.addEventListener('focusin', handleFocusIn)
+    list.addEventListener('pointerdown', handlePointerDown)
     return () => {
       cancelAnimationFrame(frame)
       observer.disconnect()
       list.removeEventListener('scroll', handleScroll)
       list.removeEventListener('focusin', handleFocusIn)
+      list.removeEventListener('pointerdown', handlePointerDown)
     }
   }, [getStatusText, total])
 

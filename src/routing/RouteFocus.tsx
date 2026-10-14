@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { useLocation, useNavigationType } from 'react-router'
+import { focusContainer } from './focusContainer.ts'
 import { isSearchFormNavigation } from './navigationState.ts'
 
 // Ids cuyo elemento recibe el foco él mismo, en lugar de su primer encabezado
@@ -86,11 +87,8 @@ export function RouteFocus() {
     const target = findHashTarget(hash)
     if (target) {
       target.scrollIntoView({ behavior: 'instant', block: 'start' })
-      focusWithoutScroll(
-        SELF_FOCUS_IDS.has(target.id)
-          ? target
-          : target.querySelector<HTMLElement>('h1, h2, h3, h4, h5, h6'),
-      )
+      if (SELF_FOCUS_IDS.has(target.id)) focusContainer(target)
+      else focusWithoutScroll(target.querySelector<HTMLElement>('h1, h2, h3, h4, h5, h6'))
       // La limpieza del efecto cierra la ventana si llega otra navegación antes
       return keepAnchored(target)
     }
@@ -104,9 +102,8 @@ export function RouteFocus() {
     }
     // Una página cuyo h1 no está al inicio lo declara con data-route-focus="main": el foco va al inicio del contenido
     const heading = document.querySelector<HTMLElement>('h1')
-    focusWithoutScroll(
-      heading?.dataset.routeFocus === 'main' ? document.getElementById('main-content') : heading,
-    )
+    if (heading?.dataset.routeFocus === 'main') focusContainer(document.getElementById('main-content'))
+    else focusWithoutScroll(heading)
   }, [pathname, search, hash, key, navigationType, fromSearchForm])
 
   return null
