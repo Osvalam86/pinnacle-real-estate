@@ -16,7 +16,12 @@ function FaqCard({ question, answer }: FaqItem) {
   )
 }
 
-export function FaqSection() {
+type FaqSectionProps = {
+  /** Relleno inferior en cada ancho: Contact lo reduce a 1440 */
+  paddingBottomClassName?: string
+}
+
+export function FaqSection({ paddingBottomClassName = 'pb-20 md:pb-26 xl:pb-32' }: FaqSectionProps) {
   const headingId = useId()
 
   return (
@@ -24,7 +29,7 @@ export function FaqSection() {
     <section
       id="faq"
       aria-labelledby={headingId}
-      className="mx-auto flex max-w-page flex-col gap-10.5 px-4 pt-16 pb-20 md:gap-16 md:px-10 md:pt-20 md:pb-26 xl:gap-18 xl:px-16 xl:pt-22 xl:pb-32"
+      className={`mx-auto flex max-w-page flex-col gap-10.5 px-4 pt-16 md:gap-16 md:px-10 md:pt-20 xl:gap-18 xl:px-16 xl:pt-22 ${paddingBottomClassName}`}
     >
       {/* El icono va arriba por debajo de 1440, como en Figma */}
       <SectionTitle
