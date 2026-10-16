@@ -62,7 +62,7 @@ const FLOAT_ACTIVE_CLASSES =
 const INPUT_CLASSES =
   'h-6 min-w-0 flex-1 bg-transparent text-ellipsis text-body-medium-16 text-default focus:outline-hidden autofill:shadow-[inset_0_0_0_1000px_var(--background-color-page)] autofill:[-webkit-text-fill-color:var(--text-color-default)]'
 
-const CHEVRON_CLASSES = 'size-5 shrink-0 text-muted'
+const CHEVRON_CLASSES = 'size-5 shrink-0 text-muted forced-colors:text-inherit'
 
 // <select> invisible sobre la cara: fondo, color y texto para que la lista del sistema se lea
 const SELECT_CLASSES =
@@ -522,7 +522,7 @@ export function ContactFormSection() {
 
             <button
               type="submit"
-              className="flex h-14.5 w-full items-center justify-center gap-2.5 rounded-xl bg-accent px-6 pt-5.5 pb-6 text-body-medium-18 text-inverse inset-shadow-button-accent hover:bg-accent-hover md:w-39"
+              className="flex h-14.5 w-full items-center justify-center gap-2.5 rounded-xl bg-accent px-6 pt-5.5 pb-6 text-body-medium-18 text-inverse inset-shadow-button-accent hover:bg-accent-hover forced-colors:not-focus-visible:outline forced-colors:not-focus-visible:-outline-offset-1 md:w-39"
             >
               Send
               <SendIcon />

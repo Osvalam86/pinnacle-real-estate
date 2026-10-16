@@ -47,7 +47,7 @@ function ServiceCard({ title, description }: Service) {
           to="/case-study"
           id={linkId}
           aria-labelledby={`${linkId} ${titleId}`}
-          className="relative text-body-medium-14 text-default after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-current hover:text-gray-1"
+          className="relative text-body-medium-14 text-default after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-current hover:text-gray-1 forced-colors:after:bg-[LinkText]"
         >
           Learn more...
         </Link>

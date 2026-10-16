@@ -253,7 +253,7 @@ function ProjectSidebar({ article, articleRef, title }: ProjectSidebarProps) {
           Amenities
         </p>
         {/* Línea de Figma: trazo de 1 px centrado en una caja de alto 0 */}
-        <div className="relative after:absolute after:inset-x-0 after:top-[-0.5px] after:h-px after:bg-gray-10" />
+        <div className="relative after:absolute after:inset-x-0 after:top-[-0.5px] after:h-px after:bg-gray-10 forced-colors:after:bg-[CanvasText]" />
         <ul aria-labelledby={amenitiesId} className="flex flex-col gap-4">
           {amenities.map((item) => (
             <li key={item.name} className="text-body-medium-18 text-muted md:text-body-medium-20">

@@ -7,7 +7,7 @@ import titleShapeUrl from '../assets/cta-title-shape.svg'
 import { Button } from './Button.tsx'
 
 // Mallas a su tamaño propio; posiciones calculadas aparte porque los archivos se reencuadraron
-const MESH_CLASSES = 'pointer-events-none absolute max-w-none'
+const MESH_CLASSES = 'pointer-events-none absolute max-w-none forced-colors:hidden'
 
 export function CtaSection() {
   const headingId = useId()

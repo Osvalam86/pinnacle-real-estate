@@ -21,10 +21,13 @@ type NativeButtonProps = CommonProps &
 
 export type ButtonProps = LinkButtonProps | NativeButtonProps
 
+// Sin borde: movería 1 px la sombra interior. En alto contraste la sombra desaparece y el contorno marca el límite
 const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   // Texto gray-13 y no gray-4 como en Figma: D6
-  primary: 'bg-accent px-6 py-4 text-inverse inset-shadow-button-accent hover:bg-accent-hover',
-  secondary: 'bg-surface-raised px-6 py-4 text-default inset-shadow-button hover:bg-gray-10',
+  primary:
+    'bg-accent px-6 py-4 text-inverse inset-shadow-button-accent hover:bg-accent-hover forced-colors:not-focus-visible:outline forced-colors:not-focus-visible:-outline-offset-1',
+  secondary:
+    'bg-surface-raised px-6 py-4 text-default inset-shadow-button hover:bg-gray-10 forced-colors:not-focus-visible:outline forced-colors:not-focus-visible:-outline-offset-1',
   // Borde real de 1 px: el relleno de Figma (16/24) se reduce en 1 para medir lo mismo
   tertiary: 'border border-default bg-surface px-5.75 py-3.75 text-default hover:bg-surface-raised',
 }

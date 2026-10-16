@@ -44,7 +44,7 @@ export function ProjectHero({ name, summary, type, address, image }: ProjectHero
               {`${type} Development`}
             </p>
             <p className="flex min-w-0 items-center gap-1 py-4 text-body-medium-14 text-default md:text-body-medium-18">
-              <FlagIcon className="shrink-0 text-subtle" />
+              <FlagIcon className="shrink-0 text-subtle forced-colors:text-inherit" />
               <span className="line-clamp-2">{address}</span>
             </p>
           </div>

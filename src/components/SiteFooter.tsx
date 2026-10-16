@@ -103,11 +103,12 @@ function NewsletterForm() {
 
   return (
     <form noValidate onSubmit={handleSubmit} className="flex w-full max-w-76.25 flex-col gap-2">
-      <label htmlFor={inputId} className="sr-only">
-        Email address
-      </label>
       {/* El contorno de foco se pinta en la caja completa cuando el campo tiene el foco */}
-      <div className="flex h-13.25 items-center gap-2 rounded-lg border border-control px-3.75 text-subtle has-[input:focus-visible]:outline-2 has-[input:focus-visible]:outline-offset-2 has-[input:focus-visible]:outline-focus has-[input[aria-invalid=true]]:border-feedback-danger">
+      <div className="relative flex h-13.25 items-center gap-2 rounded-lg border border-control px-3.75 text-subtle has-[input:focus-visible]:outline-2 has-[input:focus-visible]:outline-offset-2 has-[input:focus-visible]:outline-focus has-[input[aria-invalid=true]]:border-feedback-danger">
+        {/* La caja entera enfoca el campo; el <label> va como capa porque no puede contener el botón */}
+        <label htmlFor={inputId} className="absolute -inset-px cursor-text rounded-lg">
+          <span className="sr-only">Email address</span>
+        </label>
         <MailIcon />
         <input
           ref={inputRef}
@@ -121,13 +122,13 @@ function NewsletterForm() {
           onChange={(event) => setEmail(event.target.value)}
           aria-invalid={hasError ? 'true' : undefined}
           aria-describedby={hasError ? messageId : undefined}
-          className="min-w-0 flex-1 bg-transparent text-body-medium-14 text-default placeholder:text-subtle focus:outline-hidden autofill:shadow-[inset_0_0_0_1000px_var(--background-color-page)] autofill:[-webkit-text-fill-color:var(--text-color-default)]"
+          className="relative min-w-0 flex-1 bg-transparent text-body-medium-14 text-default placeholder:text-subtle focus:outline-hidden autofill:shadow-[inset_0_0_0_1000px_var(--background-color-page)] autofill:[-webkit-text-fill-color:var(--text-color-default)]"
         />
         {/* Área de 24×24 con margen negativo para que el icono no se mueva de su sitio */}
         <button
           type="submit"
           aria-label="Subscribe to our newsletter"
-          className="-m-0.5 flex size-6 shrink-0 items-center justify-center text-default hover:text-gray-1"
+          className="relative -m-0.5 flex size-6 shrink-0 items-center justify-center text-default hover:text-gray-1"
         >
           <SendIcon />
         </button>

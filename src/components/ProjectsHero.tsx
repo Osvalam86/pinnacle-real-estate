@@ -200,7 +200,7 @@ export function ProjectsHero({ onSearch }: SearchFormProps) {
                 {/* Punto de 12 px: 4 dentro de la pastilla y 8 fuera; -bottom cuenta desde dentro del borde */}
                 <Link
                   to={`/projects/${project.slug}`}
-                  className="relative block whitespace-nowrap rounded-lg border border-gray-6 bg-gray-5/45 p-3.75 text-body-bold-11 text-gray-13 decoration-1 backdrop-blur-md after:absolute after:-bottom-2.25 after:left-1/2 after:size-3 after:-translate-x-1/2 after:rounded-full after:bg-gray-13 after:inset-shadow-pin-dot hover:underline focus-visible:ring-2 focus-visible:ring-gray-13 md:px-5.75 md:text-body-bold-14 xl:text-body-bold-16"
+                  className="relative block whitespace-nowrap rounded-lg border border-gray-6 bg-gray-5/45 p-3.75 text-body-bold-11 text-gray-13 decoration-1 backdrop-blur-md after:absolute after:-bottom-2.25 after:left-1/2 after:size-3 after:-translate-x-1/2 after:rounded-full after:bg-gray-13 after:inset-shadow-pin-dot hover:underline focus-visible:ring-2 focus-visible:ring-gray-13 forced-colors:after:bg-[CanvasText] md:px-5.75 md:text-body-bold-14 xl:text-body-bold-16"
                 >
                   {project.name}
                 </Link>
