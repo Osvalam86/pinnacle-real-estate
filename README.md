@@ -74,7 +74,7 @@ La tabla completa, con los añadidos y las diferencias entre anchos, está en [D
 
 El objetivo es **WCAG 2.2 AA**. Este README no afirma conformidad: dice qué se probó, cómo y qué queda abierto. El detalle está en [DESIGN.md](DESIGN.md) § Accesibilidad implementada y § Pruebas.
 
-**Por programa.** Cada cambio se midió en Chromium y en Firefox con scripts de un solo uso que no forman parte del repo: medidas frente a Figma, orden de Tab y contornos de foco, alto contraste emulado, 56 casos de navegación y foco, y la huella antes y después en 7 rutas y 5 anchos.
+**Por programa.** Cada cambio se midió en Chromium y en Firefox con comprobaciones automáticas de un solo uso que no forman parte del repo: medidas frente a Figma, orden de Tab y contornos de foco, alto contraste emulado, 56 casos de navegación y foco, y la huella antes y después en 7 rutas y 5 anchos.
 
 **A mano, contra el sitio desplegado:**
 
@@ -188,7 +188,7 @@ Los demás iconos del archivo, sin origen identificado, se usan bajo la licencia
 
 ## Autor y licencia
 
-**Osvaldo Ocampo** · [LinkedIn](https://www.linkedin.com/in/osvaldo-ocampo/) · [GitHub](https://github.com/Osvalam86)
+**Osvaldo Ocampo** · [LinkedIn](https://www.linkedin.com/in/osvaldo-ocampo) · [GitHub](https://github.com/Osvalam86)
 
 Construido con asistencia de herramientas de IA; las decisiones, la revisión del código y las pruebas manuales son del autor.
 

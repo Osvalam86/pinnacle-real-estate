@@ -9,7 +9,7 @@ Contrato entre el diseño y el código. Recoge cómo se tradujo el archivo de Fi
 ## 1 · Fuentes
 
 - **Diseño:** «Free Real Estate Portfolio website template.» de **Herve Wabo**, Figma Community, licencia CC BY 4.0. Marca interna: Pinnacle. <https://www.figma.com/community/file/1387710768278467368/free-real-estate-portfolio-website-template>
-- **Copia de trabajo:** los identificadores de nodo de este documento son de una copia del archivo. Las instancias apuntan a copias de biblioteca, así que por script se buscan por el nombre del componente, no por el id.
+- **Copia de trabajo:** los identificadores de nodo de este documento son de una copia del archivo. Las instancias apuntan a copias de biblioteca, así que, para leerlas de forma automática, se buscan por el nombre del componente, no por el id.
 - **Alcance:** Home, Projects, Project Details, Contact y 404, a 1440, 774 y 360. Fuera: About us, Services, Blog, Blog Details y Privacy Policy, y cualquier API real.
 
 | Página | 1440 | 774 | 360 |
@@ -42,7 +42,7 @@ El archivo de Figma no tiene variables: tiene 14 estilos de color (el acento y 1
 
 ### Color
 
-- **Primitivos:** los 14 estilos de color (`accent` `#FF5200` y `gray-1` a `gray-13`), disponibles para las excepciones de fidelidad.
+- **Primitivos:** los 14 estilos de color (`orange-13` `#FF5200`, semántico `accent`, y `gray-1` a `gray-13`), disponibles para las excepciones de fidelidad.
 - **Semánticos:** lo que leen los componentes. Fondo de página `gray-13` (`#020100`), superficie `gray-12`, superficie elevada `gray-11`, borde por defecto `gray-10`, texto por defecto `gray-4`, texto secundario `gray-6`, texto tenue `gray-7`, texto sobre el acento `gray-13`, foco `gray-1`.
 - **Borde de control:** `gray-7` (`#8D8D8C`) en todos los límites de control (D2, D3, D9, D10, D18, D20, D21): 6,28:1 sobre `#020100` y 5,49:1 sobre `#161514`. Es el único gris del archivo que llega a 3:1 en los dos fondos sin ser color de texto.
 - **Fuera del sistema (añadidos):** `--color-accent-hover: #fe6d2f` (A46), el color de la sombra interior del Primary button de Figma; `feedback-danger` `#FB7185` (A19): 7,75:1 sobre `#020100`, 6,78:1 sobre `#161514` y 6,11:1 sobre `#201F1F`. No hay color de éxito.
@@ -54,7 +54,7 @@ El archivo de Figma no tiene variables: tiene 14 estilos de color (el acento y 1
 - **Familias:** Clash Display (500, 600, 700) en títulos y Satoshi (400, 500, 700) en texto, de Fontshare (§ 9).
 - **Clases de texto con el nombre de Figma:** `text-h3`, `text-h4`, `text-h5`, `text-h6`, `text-extra-30`, `text-extra-25`, `text-body-medium-16`, `text-body-regular-18`… Solo entran los estilos usados en los 15 frames.
 - **Incoherencias del archivo** (el token toma el valor real y el mapa conserva el nombre): `Body/Bold/12px` mide 13; `Body/Bold/10px` y `Body/Medium/10px` miden 11; `Body/Medium/24px` es Clash Display Medium a 120 %; `Body/Regular/20px` y `18px` van a 160 % y el resto a 150 %; `Extra/25px-bold` y `Extra/30px-bold` son Semibold. Home usa un «18px-medium» que no está entre los locales: «View all blog post» usa `text-body-medium-18`.
-- **Textos sin token:** «View all blog post», el logotipo del footer (Satoshi Bold 27), las firmas de las reseñas del hero y «Share» a 360.
+- **Textos sin estilo de texto en Figma:** las firmas de las reseñas del hero, sin token; «Share» a 360, `--text-heading-medium-20`; «View all blog post», `text-body-medium-18`; el logotipo del footer (Satoshi Bold 27), `logo.svg` (D36).
 - **Nombres de Tailwind con valor distinto al de fábrica:** `rounded-xl`, `rounded-3xl`, `leading-tight`, `leading-relaxed` y de `text-3xl` en adelante.
 
 ### Medidas, capas y efectos
@@ -70,6 +70,7 @@ El archivo de Figma no tiene variables: tiene 14 estilos de color (el acento y 1
 | `--inset-shadow-pin-dot` | `inset 0 1px 2px 0 rgb(224 224 224 / 0.56)` | Punto de los pines |
 | `--inset-shadow-flag` | `inset 0 4px 4px 0 rgb(0 0 0 / 0.25)` | Marco de la bandera |
 | `--shadow-review-lg` · `--shadow-review-sm` | Sombras de las reseñas del hero | Valores de capa sin estilo |
+| `--text-heading-medium-20` | `--text-xl` (20) · `--leading-tight` (1.2) · `--font-weight-medium` (500) | «Share» a 360: Clash Display Medium 20/120 %, sin estilo en Figma |
 
 El efecto «icon effet» (sombra interior `#FC6E32`) va dentro de cada SVG de icono de título como filtro.
 
@@ -83,13 +84,14 @@ Un valor arbitrario rompe la trazabilidad con Figma, así que cada uno queda aqu
 |---|---|---|
 | Fondo del sitio | Posiciones con decimales de las rayas B y del resplandor; tamaño, giro `155.9678deg` y `blur-[52px]` del resplandor; degradado radial en sRGB | Calco de las tres colocaciones de `Bg elements`. El desenfoque se calibró midiendo contra el render de Figma (mínimo de diferencia en 52 px). Las utilidades de degradado de Tailwind mezclan en oklab |
 | `HeroFade` y capa extra de Contact | Degradados lineales `rgb(0 0 0/0) 74.4577% → #000 91.1695%` y `74.4577% → 100%` | Sin token de degradado; `#000` tal cual Figma |
-| Mallas del CTA | Posiciones `left`/`right` y `top: calc(50% ± …)` por tramo | Centro de cada malla en Figma, redondeado a píxel |
+| Mallas del CTA | `top: calc(50% ± …)` en cada ancho; `left` y `right` usan la escala (`-left-44.5`, `-right-47.25`…) y no son arbitrarios | Centro de cada malla en Figma, redondeado a píxel |
 | Título del CTA | `word-spacing` de `1.14px`, `1.75px` y `-2.25px` | Separación entre palabras de Figma (5, 9, 9) con una frase corrida |
+| Forma del título del CTA | `translate-y-[calc((1lh-100%)/2)]` | Alineada arriba y centrada en la línea, para no aumentar su alto |
 | Carrusel | `xl:w-[calc((100%-2rem)/3)]`, `xl:w-[calc((100%-1rem)/2)]`, `md:w-[38.09375rem]`, `[scrollbar-width:none]` | Anchos de tarjeta de Figma; barra oculta |
 | Services | `grid-cols-[repeat(auto-fit,minmax(min(100%,26rem),1fr))]` | A33, mínimo de 416 |
 | Pines | Izquierda en % y posición vertical en px por slug (`PIN_POSITIONS`) | Calco sobre el mapa |
 | Hero de Home | Degradados de fondo y de borde de las reseñas por ancho, máscara del `::before`, `before:rounded-[inherit]`, `backdrop-blur-[7px]`, `grid-cols-[auto_auto]` | Cristal de las reseñas; la escala de desenfoque salta de 4 a 8 |
-| About | Cuatro `calc(50% ± …)` de las líneas; posición, tamaño y giro de las dos imágenes | Calco de capas sin auto layout |
+| About | Cinco `calc(50% ± …)` de las líneas; posición, tamaño y giro de las dos imágenes | Calco de capas sin auto layout |
 | Testimonials | `md:grid-cols-[auto_minmax(0,1fr)]` | Retrato a la izquierda y `figcaption` como hijo directo del `figure` |
 | Recorte a la altura de mayúscula | `[text-box:trim-both_cap_alphabetic]` en «View all blog post», citas y firmas | Calco del recorte de Figma; sin soporte, el texto queda centrado |
 | Campo de búsqueda | `[&::-webkit-search-cancel-button]:appearance-none` | Sin el botón de borrar del navegador |
@@ -104,7 +106,7 @@ Un valor arbitrario rompe la trazabilidad con Figma, así que cada uno queda aqu
 
 ## 5 · Reglas de maquetación
 
-- **Separación con `gap`** en el padre, como el auto layout de Figma. `margin` solo para centrar (`mx-auto`) o en negativo cuando el diseño lo usa, siempre comentado. En el repo quedan: el carril del carrusel (`-mx-4 md:-mx-10 xl:mx-0`), el contador de Featured (`md:-mb-3`), el buscador sobre el mapa (`-mt-12`; `gap` no admite negativos), el solape de About a 774 (`md:-mt-0.75 xl:mt-0`; CSS no reparte espacio negativo con `space-between`), los retratos superpuestos (`-space-x-4`) y el botón del newsletter (`-m-0.5`).
+- **Separación con `gap`** en el padre, como el auto layout de Figma. `margin` solo para centrar (`mx-auto`, sin comentario), para reiniciar esos márgenes en un punto de corte o en negativo cuando el diseño lo usa; cada negativo lleva un comentario con su motivo. En negativo quedan: el carril del carrusel (`-mx-4 md:-mx-10`), el contador de Featured (`md:-mb-3`), el buscador sobre el mapa (`-mt-12`; `gap` no admite negativos), el solape de About a 774 (`md:-mt-0.75`; CSS no reparte espacio negativo con `space-between`), los retratos superpuestos (`-space-x-4`) y el botón del newsletter (`-m-0.5`). Reinicios, que no separan: `xl:mx-0` en el carril del carrusel (anula el negativo) y en la composición del hero de Home (anula `mx-auto`), y `xl:mt-0` en el solape de About.
 - **Móvil primero:** sin variantes `max-*`.
 - **Un hijo que puede quedar vacío** (un `role="status"`) se saca del flujo (`sr-only` o `empty:sr-only`) para no dejar un `gap` de más. Un mensaje que solo existe a veces no se pinta en el DOM.
 - **Borde interior de Figma.** En este archivo los trazos son interiores y no cuentan en el layout. En CSS el borde ocupa su píxel: borde real de 1 px y relleno reducido en 1 (24/16 → 23/15). La caja exterior y la distancia del borde al texto son las de Figma, y el borde se conserva en alto contraste. En imágenes, `outline` con desfase −1. Encima de un hijo que recorta, en un `::after`. **En elementos con sombra interior no**: el borde, aunque sea transparente, mueve la sombra (medido en los 13 botones).
@@ -131,9 +133,9 @@ Un valor arbitrario rompe la trazabilidad con Figma, así que cada uno queda aqu
 | Ruta | Página | `<title>` |
 |---|---|---|
 | `/` | Home | Pinnacle Real Estate |
-| `/projects` | Projects | Página – Pinnacle |
+| `/projects` | Projects | Projects – Pinnacle |
 | `/projects/:slug` | Project Details (9 proyectos, una plantilla) | Nombre del proyecto – Pinnacle |
-| `/contact` | Contact | Página – Pinnacle |
+| `/contact` | Contact | Contact Us – Pinnacle |
 | `/case-study` | Página genérica: destino de los enlaces sin página en alcance | About this case study – Pinnacle |
 | `*` y slug desconocido | 404, sin redirigir | Page Not Found – Pinnacle |
 
@@ -323,7 +325,7 @@ Clash Display y Satoshi por la API de Fontshare, en dos hojas de estilo (pedidas
 
 ### Despliegue (Netlify)
 
-- `/assets/*` inmutable 1 año (llevan huella en el nombre). `/images/*`, HTML y favicon con revalidación.
+- `/assets/*` inmutable 1 año (llevan huella en el nombre). `/images/*`, HTML y favicon con revalidación (por defecto de Netlify).
 - **SPA renderizada en cliente:** el HTML inicial llega vacío y las tarjetas al compartir usan solo las `og:` estáticas de `index.html`. Decisión consciente para un portafolio; un sitio con necesidades de SEO se prerenderizaría.
 - El 404 lo pinta la aplicación y el servidor responde 200.
 - **Metadatos:** `description`, `og:type`, `og:title`, `og:description`, `og:url`, `og:image` (`public/og-image.png`, 1200×630, compuesta desde capturas reales de Home) con ancho, alto y `og:image:alt`, y `twitter:card`. Fuera, a propósito: `author` (podría leerse como autoría del diseño), `og:locale`, `og:site_name` y metadatos por ruta (las redes no ejecutan JS).
@@ -513,7 +515,7 @@ Se anotan y no se corrigen.
 
 ## 14 · Pruebas
 
-Ningún arnés forma parte del repo. Cada tramo se midió con scripts de un solo uso y se comprobó a la vista.
+Ninguna herramienta de medición forma parte del repo. Cada cambio se midió con comprobaciones automáticas de un solo uso y se revisó a la vista.
 
 ### Por programa (Chromium y Firefox)
 
@@ -538,7 +540,7 @@ Ningún arnés forma parte del repo. Cada tramo se midió con scripts de un solo
 | TalkBack en Home y Contact; compartir del sistema, teclado virtual, footer abajo | Android, Chrome | Sin fallos tras los arreglos |
 | Alto contraste real (Acuático) en 4 rutas y el footer | Windows, Chrome | Correcto tras un arreglo (doble indicador en los campos) |
 | Primera visita con caché vacía | Chrome en incógnito y Firefox en privada | Las 4 fotos principales enteras de una vez |
-| Revisión a la vista en cada tramo | Chrome y Firefox en Windows, PC y portátil | Correcto |
+| Revisión a la vista en cada cambio | Chrome y Firefox en Windows, PC y portátil | Correcto |
 
 **Hallazgos de las pruebas manuales, corregidos:** espacios ocultos que no llegaban al árbol de accesibilidad; aviso del buscador que se callaba sin cambio de URL; casilla anunciada como inválida antes de enviar; error del newsletter leído dos veces.
 
