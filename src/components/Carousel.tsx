@@ -96,7 +96,6 @@ export function Carousel<T>({
       if (targetIndex === -1) return
       const listBox = list.getBoundingClientRect()
       const itemBox = items[targetIndex].getBoundingClientRect()
-      // 1 px de margen por los anchos fraccionarios
       if (itemBox.left >= listBox.left - 1 && itemBox.right <= listBox.right + 1) return
       scrollToItem(list, targetIndex)
     }

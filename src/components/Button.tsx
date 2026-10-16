@@ -19,7 +19,7 @@ type NativeButtonProps = CommonProps &
     type: 'button' | 'submit' | 'reset'
   }
 
-export type ButtonProps = LinkButtonProps | NativeButtonProps
+type ButtonProps = LinkButtonProps | NativeButtonProps
 
 // Sin borde: movería 1 px la sombra interior. En alto contraste la sombra desaparece y el contorno marca el límite
 const VARIANT_CLASSES: Record<ButtonVariant, string> = {

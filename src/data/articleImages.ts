@@ -1,6 +1,6 @@
 // Fotos del artículo por proyecto y por id de sección. Solo The Grand Estate tiene fotos en el diseño.
 
-export type ArticleImage = {
+type ArticleImage = {
   src: string
   alt: string
   /** Medidas reales del archivo */

@@ -3,7 +3,6 @@ export type NewsArticle = {
   title: string
   /** Fecha en ISO para <time dateTime> */
   publishedAt: string
-  /** Fecha tal como se muestra */
   dateLabel: string
   image: string
 }

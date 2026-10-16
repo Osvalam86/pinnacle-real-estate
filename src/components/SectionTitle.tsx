@@ -9,7 +9,6 @@ type SectionTitleProps = {
   className?: string
   /** Alineación vertical de icono y encabezado */
   alignClassName?: string
-  /** Clases añadidas al encabezado */
   headingClassName?: string
   tabIndex?: number
   'data-route-focus'?: string

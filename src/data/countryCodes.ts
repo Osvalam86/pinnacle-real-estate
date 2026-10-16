@@ -8,12 +8,10 @@ import gbFlag from '../assets/flags/gb.svg'
 import mxFlag from '../assets/flags/mx.svg'
 import usFlag from '../assets/flags/us.svg'
 
-export type CountryCode = {
-  /** Valor del <select> */
+type CountryCode = {
   value: string
   name: string
   dialCode: string
-  /** URL de la bandera */
   flag: string
 }
 

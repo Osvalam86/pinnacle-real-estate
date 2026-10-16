@@ -5,7 +5,7 @@ export type ProjectArticle = (typeof projects)[number]['article']
 const WORDS_PER_MINUTE = 200
 
 // Cuenta como palabra cada fragmento entre espacios con al menos una letra o cifra: el guion suelto no cuenta
-export function countWords(article: ProjectArticle) {
+function countWords(article: ProjectArticle) {
   const texts = article.flatMap((section) => [
     section.title,
     ...section.paragraphs,

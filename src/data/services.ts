@@ -3,7 +3,7 @@ export type Service = {
   description: string
 }
 
-export type ServiceCategory = {
+type ServiceCategory = {
   id: string
   label: string
   services: Service[]

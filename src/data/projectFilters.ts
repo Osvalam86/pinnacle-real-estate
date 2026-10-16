@@ -1,6 +1,6 @@
 // Opciones del buscador de Projects. Cada valor de la URL apunta al texto exacto de projects.json.
 
-export type FilterOption = {
+type FilterOption = {
   /** Valor en la URL */
   value: string
   label: string
@@ -54,7 +54,7 @@ export const projectFilters: ProjectFilter[] = [
   },
 ]
 
-export type SearchValues = { q: string } & Record<ProjectFilter['name'], string>
+type SearchValues = { q: string } & Record<ProjectFilter['name'], string>
 
 // Un valor que no está en la lista se trata como sin filtro
 export function readSearchValues(params: URLSearchParams): SearchValues {

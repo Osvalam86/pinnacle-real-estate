@@ -273,7 +273,6 @@ function CountryCodeSelect({ value, onChange }: CountryCodeSelectProps) {
 type MessageFieldProps = {
   value: string
   onChange: (event: ChangeEvent<HTMLTextAreaElement>) => void
-  /** Id del mensaje de error; solo se pasa mientras el campo es inválido */
   errorId?: string
 }
 
