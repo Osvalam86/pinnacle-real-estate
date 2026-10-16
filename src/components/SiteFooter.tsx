@@ -122,7 +122,7 @@ function NewsletterForm() {
           onChange={(event) => setEmail(event.target.value)}
           aria-invalid={hasError ? 'true' : undefined}
           aria-describedby={hasError ? messageId : undefined}
-          className="relative min-w-0 flex-1 bg-transparent text-body-medium-14 text-default placeholder:text-subtle focus:outline-hidden autofill:shadow-[inset_0_0_0_1000px_var(--background-color-page)] autofill:[-webkit-text-fill-color:var(--text-color-default)]"
+          className="relative min-w-0 flex-1 bg-transparent text-body-medium-14 text-default placeholder:text-subtle focus:outline-none autofill:shadow-[inset_0_0_0_1000px_var(--background-color-page)] autofill:[-webkit-text-fill-color:var(--text-color-default)]"
         />
         {/* Área de 24×24 con margen negativo para que el icono no se mueva de su sitio */}
         <button

@@ -60,7 +60,7 @@ const FLOAT_ACTIVE_CLASSES =
 
 // text-ellipsis: sin foco, el valor que no cabe se corta con puntos suspensivos
 const INPUT_CLASSES =
-  'h-6 min-w-0 flex-1 bg-transparent text-ellipsis text-body-medium-16 text-default focus:outline-hidden autofill:shadow-[inset_0_0_0_1000px_var(--background-color-page)] autofill:[-webkit-text-fill-color:var(--text-color-default)]'
+  'h-6 min-w-0 flex-1 bg-transparent text-ellipsis text-body-medium-16 text-default focus:outline-none autofill:shadow-[inset_0_0_0_1000px_var(--background-color-page)] autofill:[-webkit-text-fill-color:var(--text-color-default)]'
 
 const CHEVRON_CLASSES = 'size-5 shrink-0 text-muted forced-colors:text-inherit'
 
@@ -303,7 +303,7 @@ function MessageField({ value, onChange, errorId }: MessageFieldProps) {
         onChange={onChange}
         aria-invalid={errorId ? 'true' : undefined}
         aria-describedby={errorId}
-        className="min-h-34.5 min-w-0 flex-1 resize-y bg-transparent text-body-medium-16 text-default focus:outline-hidden"
+        className="min-h-34.5 min-w-0 flex-1 resize-y bg-transparent text-body-medium-16 text-default focus:outline-none"
       />
     </label>
   )
