@@ -77,8 +77,8 @@ function SearchForm({ onSearch }: SearchFormProps) {
     onSearch(search)
     const isCurrentUrl =
       location.pathname === '/projects' && location.search === search && location.hash === ''
-    if (isCurrentUrl) return
-    navigate({ pathname: '/projects', search }, { state: SEARCH_FORM_STATE })
+    // Sin cambio de URL se navega con replace: así el envío no queda como POP y el aviso lo distingue de atrás/adelante
+    navigate({ pathname: '/projects', search }, { replace: isCurrentUrl, state: SEARCH_FORM_STATE })
   }
 
   return (

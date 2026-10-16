@@ -12,7 +12,7 @@ function CreditLink({ href, children }: { href: string; children: ReactNode }) {
       className="underline [text-decoration-skip-ink:none] hover:text-gray-1"
     >
       {children}
-      <span className="sr-only"> (opens in a new tab)</span>
+      <span className="sr-only whitespace-pre"> (opens in a new tab)</span>
     </a>
   )
 }

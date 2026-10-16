@@ -47,7 +47,7 @@ export function ContactInfo() {
             rel="noopener noreferrer"
             className={`self-start ${BOX}`}
           >
-            Get Directions<span className="sr-only"> (opens in a new tab)</span>
+            Get Directions<span className="sr-only whitespace-pre"> (opens in a new tab)</span>
           </a>
         </div>
       </div>

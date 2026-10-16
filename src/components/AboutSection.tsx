@@ -57,13 +57,13 @@ export function AboutSection() {
                 <img src={titleShapeMobileUrl} alt="" width="56" height="24" className="md:hidden" />
                 <img src={titleShapeUrl} alt="" width="121" height="47" className="hidden md:block" />
                 {/* El espacio inicial solo ocupa sitio desde 774, como en Figma; a 360 queda para el lector.
-                    whitespace-pre: not-sr-only devuelve white-space: normal y el espacio se perdía */}
+                    whitespace-pre: sin él, el flex lo vuelve bloque y el espacio colapsa; md:whitespace-pre porque not-sr-only devuelve white-space: normal */}
                 <span>
-                  <span className="sr-only md:not-sr-only md:whitespace-pre">{' '}</span>
+                  <span className="sr-only whitespace-pre md:not-sr-only md:whitespace-pre">{' '}</span>
                   building
                 </span>
-                {/* Separa las dos líneas en el nombre accesible sin depender de cómo se unen los bloques */}
-                <span className="sr-only">{' '}</span>
+                {/* Separa las dos líneas para el lector; whitespace-pre por el mismo motivo */}
+                <span className="sr-only whitespace-pre">{' '}</span>
               </span>
               {/* separación −3 de Figma a 774 */}
               <span className="md:-mt-0.75 xl:mt-0">communities.</span>

@@ -54,7 +54,9 @@ export function CtaSection() {
           id={headingId}
           className="relative w-full max-w-77 text-center font-heading text-extra-25 text-gray-1 [word-spacing:1.14px] md:max-w-153.5 md:text-h5 md:[word-spacing:1.75px] xl:max-w-228.75 xl:text-h3 xl:[word-spacing:-2.25px]"
         >
-          Let’s Build{' '}
+          Let’s Build
+          {/* Por debajo de 774, con la imagen oculta, Chromium no expone los espacios de alrededor: este lo conserva */}
+          <span className="sr-only whitespace-pre">{' '}</span>{' '}
           {/* Alineada arriba y centrada en la línea con translate, para no aumentar su alto */}
           <img
             src={titleShapeUrl}
