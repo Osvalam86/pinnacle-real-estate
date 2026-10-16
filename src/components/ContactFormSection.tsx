@@ -482,7 +482,8 @@ export function ContactFormSection() {
                     id={termsId}
                     type="checkbox"
                     name="terms"
-                    required
+                    // Sin required nativo: Chromium expone valueMissing como inválido desde la carga; la obligatoriedad va con aria-required
+                    aria-required="true"
                     aria-invalid={errors.terms ? 'true' : undefined}
                     aria-describedby={errorIdFor('terms')}
                     className="peer size-7 cursor-pointer appearance-none rounded-sm border border-control bg-surface not-checked:hover:bg-surface-raised not-checked:aria-invalid:border-feedback-danger checked:border-accent checked:bg-accent"

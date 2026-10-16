@@ -133,12 +133,13 @@ function NewsletterForm() {
           <SendIcon />
         </button>
       </div>
-      <p
-        id={messageId}
-        role="status"
-        className={`max-w-76.25 text-body-medium-14 empty:sr-only ${hasError ? 'text-feedback-danger' : 'text-default'}`}
-      >
-        {feedback?.text}
+      {hasError && (
+        <p id={messageId} className="max-w-76.25 text-body-medium-14 text-feedback-danger">
+          {feedback.text}
+        </p>
+      )}
+      <p role="status" className="max-w-76.25 text-body-medium-14 text-default empty:sr-only">
+        {feedback?.kind === 'success' ? feedback.text : null}
       </p>
     </form>
   )
