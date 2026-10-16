@@ -1,6 +1,7 @@
 import { useId } from 'react'
 import titleIconUrl from '../assets/featured-title-icon.svg'
 import projects from '../data/projects.json'
+import { GRID_CARD_SIZES } from '../data/projectImages.ts'
 import { BackToProjectsLink } from './BackToProjectsLink.tsx'
 import { ProjectCard } from './ProjectCard.tsx'
 import { SectionTitle } from './SectionTitle.tsx'
@@ -53,6 +54,7 @@ export function RelatedProjectsSection({ slug }: { slug: string }) {
                   tag={project.tag}
                   image={project.image}
                   slug={project.slug}
+                  imageSizes={GRID_CARD_SIZES}
                   headingLevel="h3"
                   gapClassName="gap-6 md:gap-8"
                 />

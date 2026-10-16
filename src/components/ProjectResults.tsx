@@ -4,6 +4,7 @@ import { useLocation, useNavigationType, useSearchParams } from 'react-router'
 import titleIconUrl from '../assets/featured-title-icon.svg'
 import projects from '../data/projects.json'
 import { matchesSearch, readSearchValues } from '../data/projectFilters.ts'
+import { GRID_CARD_SIZES } from '../data/projectImages.ts'
 import { Button } from './Button.tsx'
 import { ProjectCard } from './ProjectCard.tsx'
 import { SectionTitle } from './SectionTitle.tsx'
@@ -55,6 +56,7 @@ function ProjectGrid({ results }: { results: Project[] }) {
               tag={project.tag}
               image={project.image}
               slug={project.slug}
+              imageSizes={GRID_CARD_SIZES}
               headingLevel="h2"
             />
           </li>

@@ -3,9 +3,12 @@ import linesMobileUrl from '../assets/about-lines-mobile.svg'
 import starsUrl from '../assets/about-stars-4-5.svg'
 import titleShapeUrl from '../assets/about-title-shape.svg'
 import titleShapeMobileUrl from '../assets/about-title-shape-mobile.svg'
+import { getSrcSet } from '../data/responsiveImages.ts'
 import { Button } from './Button.tsx'
 
 const CLIENT_AVATARS = ['client-1', 'client-2', 'client-3', 'client-4']
+
+const ABOUT_SRC_SET = getSrcSet('/images/home/about.webp', 1716, [400, 800])
 
 // Imágenes giradas sobre su esquina superior izquierda, como en Figma
 const PHOTO_CLASSES =
@@ -100,6 +103,8 @@ export function AboutSection() {
 
       <img
         src="/images/home/about.webp"
+        srcSet={ABOUT_SRC_SET}
+        sizes="262px"
         alt=""
         width="1716"
         height="1716"
@@ -108,6 +113,8 @@ export function AboutSection() {
       />
       <img
         src="/images/home/about.webp"
+        srcSet={ABOUT_SRC_SET}
+        sizes="262px"
         alt=""
         width="1716"
         height="1716"

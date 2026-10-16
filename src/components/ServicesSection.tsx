@@ -2,6 +2,7 @@ import { useId, useSyncExternalStore } from 'react'
 import { Tab, TabList, TabPanel, Tabs } from 'react-aria-components'
 import { Link } from 'react-router'
 import titleIconUrl from '../assets/services-title-icon.svg'
+import { getSrcSet } from '../data/responsiveImages.ts'
 import { serviceCategories, type Service } from '../data/services.ts'
 
 // Mismo valor que --breakpoint-md: desde ahí las pestañas van en fila
@@ -26,6 +27,8 @@ function ServiceCard({ title, description }: Service) {
       {/* Sin carga diferida y con decodificación síncrona: cada pestaña monta imágenes nuevas y Firefox las pintaba con un destello */}
       <img
         src="/images/shared/card-default.webp"
+        srcSet={getSrcSet('/images/shared/card-default.webp', 1274)}
+        sizes="(min-width: 90rem) 379px, (min-width: 85rem) calc((100vw - 256px) / 3), (min-width: 58rem) calc(50vw - 96px), (min-width: 48.375rem) calc(100vw - 128px), (min-width: 22.75rem) calc(100vw - 64px), 300px"
         alt=""
         width="1274"
         height="1274"

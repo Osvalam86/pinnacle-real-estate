@@ -2,6 +2,7 @@ import { useId } from 'react'
 import { Link } from 'react-router'
 import titleIconUrl from '../assets/news-title-icon.svg'
 import { newsArticles, type NewsArticle } from '../data/news.ts'
+import { getSrcSet } from '../data/responsiveImages.ts'
 import { Button } from './Button.tsx'
 import { Carousel } from './Carousel.tsx'
 import { CalendarIcon } from './icons.tsx'
@@ -15,6 +16,8 @@ function NewsCard({ tag, title, publishedAt, dateLabel, image }: NewsArticle) {
     <div className="flex flex-col gap-6 rounded-2xl border border-default bg-page px-5.75 pt-5.75 pb-7.75">
       <img
         src={image}
+        srcSet={getSrcSet(image, 1274)}
+        sizes="(min-width: 90rem) 600px, (min-width: 48.375rem) 562px, 300px"
         alt=""
         width="1274"
         height="1274"

@@ -18,7 +18,7 @@ Comandos: `pnpm dev`, `pnpm build`, `pnpm lint`, `pnpm preview`.
 ## Archivos que no se tocan sin pedirlo
 
 - `src/data/projects.json`: contenido aprobado de los 9 proyectos.
-- `public/images/`: imágenes con nombres y rutas ya fijados. No renombrar, convertir ni optimizar.
+- `public/images/`: imágenes con nombres y rutas ya fijados. No renombrar, convertir ni optimizar. Las variantes por ancho (sufijos `-640`, `-960`, `-1280` y `-1920`; `hero-tower-606` y `about-400`/`about-800`) y `home/hero-tower.webp` se generaron con sharp-cli 6.1.0 desde los originales de `pinnacle-assets` (WebP q82; la torre q90 con alfa). Si cambia un original, sus variantes se regeneran con el mismo método y en la misma tarea.
 
 ## Skills
 

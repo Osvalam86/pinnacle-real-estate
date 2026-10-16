@@ -6,6 +6,8 @@ export type ArticleImage = {
   /** Medidas reales del archivo */
   width: number
   height: number
+  /** false si la foto no tiene variantes por ancho: se sirve solo el original */
+  variants?: false
 }
 
 export type ArticleImageGroup = {
@@ -43,6 +45,7 @@ export const ARTICLE_IMAGES: Record<string, Record<string, ArticleImageGroup>> =
           alt: 'Double-height sitting room with red armchairs and a crystal chandelier',
           width: 724,
           height: 965,
+          variants: false,
         },
       ],
     },

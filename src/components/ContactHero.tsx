@@ -1,5 +1,7 @@
 import { useId } from 'react'
+import { getSrcSet } from '../data/responsiveImages.ts'
 import { HeroFade } from './HeroFade.tsx'
+import { revealOnLoad } from './revealOnLoad.ts'
 
 export function ContactHero() {
   const headingId = useId()
@@ -30,9 +32,13 @@ export function ContactHero() {
 
         <img
           src="/images/contact/hero.webp"
+          srcSet={getSrcSet('/images/contact/hero.webp', 2752)}
+          sizes="(min-width: 90rem) 1312px, (min-width: 72.4375rem) calc(100vw - 80px), (min-width: 48.375rem) 1079px, (min-width: 29.4375rem) calc(100vw - 32px), 439px"
           alt=""
           width={2752}
           height={1536}
+          fetchPriority="high"
+          ref={revealOnLoad}
           className="h-61.25 w-full rounded-2xl object-cover md:h-150.5"
         />
       </div>

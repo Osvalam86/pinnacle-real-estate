@@ -1,5 +1,6 @@
 import { useId } from 'react'
 import { IMAGE_SIZES } from '../data/projectImages.ts'
+import { getSrcSet } from '../data/responsiveImages.ts'
 import { Button } from './Button.tsx'
 import { LocationIcon } from './icons.tsx'
 
@@ -12,6 +13,8 @@ type ProjectCardProps = {
   tag: string
   image: string
   slug: string
+  /** sizes de la foto en el contexto donde se usa la tarjeta */
+  imageSizes: string
   headingLevel: HeadingLevel
   /** Separación entre la imagen y el texto; sustituye al gap-8 por defecto */
   gapClassName?: string
@@ -24,6 +27,7 @@ export function ProjectCard({
   tag,
   image,
   slug,
+  imageSizes,
   headingLevel: Heading,
   gapClassName = 'gap-8',
 }: ProjectCardProps) {
@@ -37,6 +41,8 @@ export function ProjectCard({
     >
       <img
         src={image}
+        srcSet={size && getSrcSet(image, size.width)}
+        sizes={imageSizes}
         alt=""
         width={size?.width}
         height={size?.height}

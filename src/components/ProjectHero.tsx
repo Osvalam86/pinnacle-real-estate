@@ -1,8 +1,10 @@
 import { useId } from 'react'
 import { IMAGE_SIZES } from '../data/projectImages.ts'
+import { getSrcSet } from '../data/responsiveImages.ts'
 import { BackToProjectsLink } from './BackToProjectsLink.tsx'
 import { HeroFade } from './HeroFade.tsx'
 import { FlagIcon } from './icons.tsx'
+import { revealOnLoad } from './revealOnLoad.ts'
 
 type ProjectHeroProps = {
   name: string
@@ -50,9 +52,13 @@ export function ProjectHero({ name, summary, type, address, image }: ProjectHero
 
         <img
           src={image}
+          srcSet={size && getSrcSet(image, size.width)}
+          sizes="(min-width: 90rem) 1312px, (min-width: 55.5625rem) calc(100vw - 80px), (min-width: 48.375rem) 809px, (min-width: 31.125rem) calc(100vw - 32px), 466px"
           alt=""
           width={size?.width}
           height={size?.height}
+          fetchPriority="high"
+          ref={revealOnLoad}
           className="h-65 w-full rounded-lg object-cover md:h-112.75 md:rounded-2xl xl:h-173.25"
         />
       </div>

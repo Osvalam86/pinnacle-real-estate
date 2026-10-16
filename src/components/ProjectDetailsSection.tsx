@@ -2,6 +2,7 @@ import { useEffect, useId, useRef, useState, type RefObject } from 'react'
 import { useLocation } from 'react-router'
 import { ARTICLE_IMAGES, type ArticleImageGroup } from '../data/articleImages.ts'
 import { readingMinutes, type ProjectArticle } from '../data/readingTime.ts'
+import { getSrcSet } from '../data/responsiveImages.ts'
 import { Button } from './Button.tsx'
 import {
   ShareFacebookIcon,
@@ -20,6 +21,21 @@ const IMAGE_HEIGHTS: Record<string, string[]> = {
   design: ['h-46.25 md:h-68.25', 'h-51 md:h-68.25'],
   amenities: ['h-36.25 md:h-68.25', 'h-36.25 md:h-68.25'],
   community: ['h-46.25 md:h-98'],
+}
+
+const AMENITIES_SIZES =
+  '(min-width: 90rem) 486px, (min-width: 66.1875rem) calc(50vw - 44px), (min-width: 48.375rem) 486px, calc(100vw - 32px)'
+
+// sizes de cada foto por sección y posición; la que no tiene variantes por ancho no lo lleva
+const SIZES_BY_SECTION: Record<string, string[]> = {
+  planning: [
+    '(min-width: 90rem) 765px, (min-width: 52.8125rem) calc(100vw - 80px), (min-width: 48.375rem) 765px, (min-width: 23.375rem) calc(100vw - 32px), 342px',
+  ],
+  design: ['(min-width: 48.375rem) 486px, (min-width: 22.5625rem) calc(100vw - 32px), 329px'],
+  amenities: [AMENITIES_SIZES, AMENITIES_SIZES],
+  community: [
+    '(min-width: 90rem) 765px, (min-width: 48.5625rem) calc(100vw - 80px), (min-width: 48.375rem) 697px, (min-width: 22.5625rem) calc(100vw - 32px), 329px',
+  ],
 }
 
 // Ancho de cada foto dentro de su grupo desde 774; por debajo, columna a todo el ancho
@@ -280,6 +296,7 @@ function ProjectSidebar({ article, articleRef, title }: ProjectSidebarProps) {
 
 function ArticleImages({ sectionId, group }: { sectionId: string; group: ArticleImageGroup }) {
   const heights = IMAGE_HEIGHTS[sectionId] ?? []
+  const sizes = SIZES_BY_SECTION[sectionId] ?? []
   const widths = LAYOUT_WIDTHS[group.layout]
 
   return (
@@ -288,6 +305,8 @@ function ArticleImages({ sectionId, group }: { sectionId: string; group: Article
         <img
           key={image.src}
           src={image.src}
+          srcSet={image.variants === false ? undefined : getSrcSet(image.src, image.width)}
+          sizes={sizes[index]}
           alt={image.alt}
           width={image.width}
           height={image.height}

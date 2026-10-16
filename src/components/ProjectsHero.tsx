@@ -6,6 +6,7 @@ import { SEARCH_FORM_STATE } from '../routing/navigationState.ts'
 import { Button } from './Button.tsx'
 import { HeroFade } from './HeroFade.tsx'
 import { BillIcon, BoxIcon, ChevronIcon, FlagIcon } from './icons.tsx'
+import { revealOnLoad } from './revealOnLoad.ts'
 
 // Posición de cada pin respecto al mapa: izquierda en % del ancho del mapa y arriba en px.
 // The Village y The Skyline no existen por debajo de md.
@@ -189,6 +190,8 @@ export function ProjectsHero({ onSearch }: SearchFormProps) {
             alt=""
             width="1690"
             height="1267"
+            fetchPriority="high"
+            ref={revealOnLoad}
             className="h-114.25 w-full rounded-2xl object-cover md:h-144.75 xl:h-168.75"
           />
           <ul aria-label="Projects on the map">

@@ -1,6 +1,7 @@
 import { useId } from 'react'
 import titleIconUrl from '../assets/featured-title-icon.svg'
 import projects from '../data/projects.json'
+import { CAROUSEL_CARD_SIZES } from '../data/projectImages.ts'
 import { Button } from './Button.tsx'
 import { Carousel } from './Carousel.tsx'
 import { ProjectCard } from './ProjectCard.tsx'
@@ -23,6 +24,7 @@ function renderProject(project: Project) {
       tag={project.tag}
       image={project.image}
       slug={project.slug}
+      imageSizes={CAROUSEL_CARD_SIZES}
       headingLevel="h3"
     />
   )

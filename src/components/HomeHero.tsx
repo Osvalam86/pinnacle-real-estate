@@ -1,7 +1,9 @@
 import { useId } from 'react'
 import starsFourHalfUrl from '../assets/review-stars-4-5.svg'
 import starsFiveUrl from '../assets/review-stars-5.svg'
+import { getSrcSet } from '../data/responsiveImages.ts'
 import { Button } from './Button.tsx'
+import { revealOnLoad } from './revealOnLoad.ts'
 
 // Cristal de las reseñas. Sin overflow-clip (clipsContent en Figma): recortaría el anillo del ::before. Borde real de 1 px transparente (visible en alto contraste) y relleno de
 // Figma reducido en 1. El degradado del borde lo pinta ::before sobre la caja del borde, recortado
@@ -71,10 +73,14 @@ export function HomeHero() {
             botones a 774 y la del escenario solapa el texto a 1440 */}
         <div className="pointer-events-none relative mx-auto h-107 w-90 md:h-125 md:w-193.5 xl:z-hero-art xl:col-start-1 xl:row-start-1 xl:mx-0 xl:h-207.5 xl:w-175.75 xl:justify-self-end">
           <img
-            src="/images/home/hero-tower.png"
+            src="/images/home/hero-tower.webp"
+            srcSet={getSrcSet('/images/home/hero-tower.webp', 950, [606])}
+            sizes="(min-width: 90rem) 950px, (min-width: 48.375rem) 939px, 606px"
             alt=""
             width="950"
             height="1267"
+            fetchPriority="high"
+            ref={revealOnLoad}
             className="absolute -top-34.25 -left-7.75 h-201.75 w-126.75 max-w-none object-cover md:-top-34.75 md:-left-11.5 md:h-313 md:w-199 xl:-top-38.5 xl:h-316.75"
           />
           <figure className={`${GLASS_CLASSES} ${AMANDA_CLASSES}`}>
