@@ -34,7 +34,7 @@ function CaseStudyPage() {
           <CreditLink href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</CreditLink> and adapted for this
           case study. Icons by <CreditLink href="https://www.streamlinehq.com">Streamline</CreditLink> (CC BY 4.0),{' '}
           <CreditLink href="https://hugeicons.com">Hugeicons</CreditLink> (MIT) and{' '}
-          <CreditLink href="https://iconscout.com/unicons">Unicons</CreditLink> (Apache 2.0).
+          <CreditLink href="https://iconscout.com/unicons">Unicons</CreditLink> (IconScout Simple License).
         </>
       }
     />
